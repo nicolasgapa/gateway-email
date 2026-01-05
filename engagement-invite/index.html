@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000">
+    <title>Engagement Party | Jessica & Nicolas</title>
+    <!-- External Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark-gold: #8c6d31;
+            --cream: #fdf5e6;
+            --brown: #3d3225;
+            --bg: #2c241a;
+        }
+
+        body {
+            background-color: var(--bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--brown);
+        }
+
+        /* Hero Card: High-Definition Fixed Dimensions: 1000x1360 */
+        .hero-card {
+            width: 1000px;
+            height: 1360px;
+            background-color: var(--cream);
+            border: 25px solid transparent;
+            border-image: url('https://www.transparenttextures.com/patterns/gold-glitter.png') 30 round;
+            outline: 6px double var(--gold);
+            outline-offset: -20px;
+            padding: 100px 80px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly; /* Ensures equal vertical spacing between groups */
+            align-items: center;
+            animation: fadeIn 1.2s ease-out;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Decorative Corners */
+        .hero-card::before, .hero-card::after {
+            content: "⚜";
+            position: absolute;
+            color: var(--gold);
+            font-size: 40px;
+            opacity: 0.4;
+        }
+        .hero-card::before { top: 40px; left: 40px; }
+        .hero-card::after { top: 40px; right: 40px; }
+
+        /* Banner Style */
+        .engagement-banner {
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 12px;
+            margin: 0;
+        }
+
+        .engagement-banner h2 {
+            font-size: 34px;
+            letter-spacing: 12px;
+            text-transform: uppercase;
+            color: var(--dark-gold);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header-text-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .presence-text {
+            letter-spacing: 7px;
+            font-size: 24px;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .celebrate-text {
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            font-size: 19px;
+            margin: 0;
+            opacity: 0.75;
+        }
+
+        .names-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* Names */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 115px; 
+            color: var(--dark-gold);
+            margin: 0;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .and {
+            font-style: italic;
+            font-size: 46px;
+            margin: 0;
+            opacity: 0.8;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Photo Section */
+        .photo-wrapper {
+            margin: 0;
+            width: 85%;
+            border: 1px solid var(--gold);
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .couple-photo {
+            width: 100%;
+            height: 520px;
+            display: block;
+            object-fit: cover;
+            filter: sepia(8%) contrast(1.05);
+        }
+
+        /* Logistics Section (Outside the Card) */
+        .logistics-section {
+            width: 1000px;
+            padding: 100px 80px;
+            background-color: var(--cream);
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: -2px; 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 60px; /* Equal spacing between logistics elements */
+        }
+
+        .location {
+            font-weight: 400;
+            letter-spacing: 6px;
+            font-size: 32px;
+            line-height: 1.6;
+            margin: 0;
+            width: 100%;
+            padding: 60px 0;
+            border-top: 1px solid rgba(197, 160, 89, 0.4);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+        }
+
+        .location strong {
+            display: block;
+            font-weight: 700;
+            color: var(--dark-gold);
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .footer-message {
+            font-size: 28px;
+            letter-spacing: 3px;
+            margin: 0;
+            color: var(--dark-gold);
+            text-transform: uppercase;
+            line-height: 1.6;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            margin: 0;
+        }
+
+        .rsvp-link {
+            display: inline-block;
+            width: 600px;
+            padding: 28px 30px;
+            background-color: var(--brown);
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 22px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--brown);
+            border-radius: 4px;
+            font-weight: 700;
+            box-sizing: border-box;
+        }
+
+        .rsvp-link:hover {
+            background-color: transparent;
+            color: var(--brown);
+        }
+
+        .deadline {
+            font-size: 20px;
+            margin: 0;
+            display: block;
+            opacity: 0.8;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            width: 100%;
+            margin: 0;
+            padding-top: 50px;
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .lang-btn-small {
+            background: none;
+            border: none;
+            color: var(--gold);
+            cursor: pointer;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            letter-spacing: 3px;
+            opacity: 0.6;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .lang-btn-small:hover { opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <!-- HERO CARD (1000x1360) -->
+    <div class="hero-card">
+        <div class="engagement-banner">
+            <h2 id="banner-text">Engagement Party</h2>
+        </div>
+
+        <div class="header-text-group">
+            <p class="presence-text" id="header-text">The Honor of Your Presence is Requested</p>
+            <p class="celebrate-text" id="sub-header">To Celebrate the Engagement of</p>
+        </div>
+        
+        <div class="names-group">
+            <h1>Jessica Gutstein</h1>
+            <div class="and" id="and-text">and</div>
+            <h1>Nicolas Gachancipa</h1>
+        </div>
+
+        <div class="photo-wrapper">
+            <img src="engagement1.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
+        </div>
+    </div>
+
+    <!-- LOGISTICS SECTION (Outside the Card) -->
+    <div class="logistics-section">
+        <div class="location">
+            <strong id="location-name">13384 LAKESIDE TERRACE</strong>
+            COOPER CITY, FLORIDA
+        </div>
+
+        <p class="footer-message" id="footer-invite">
+            A Soirée of Splendor and High Rejoicing<br>
+            to commence the journey of a lifetime
+        </p>
+        
+        <div class="button-group">
+            <a href="https://jessandnico.rsvpify.com" class="rsvp-link" id="rsvp-btn" target="_blank">RSVP for Engagement Party</a>
+            <a href="../" class="rsvp-link" id="website-btn" target="_blank">Access our Website</a>
+        </div>
+        
+        <span class="deadline" id="rsvp-deadline">R.S.V.P. BY MAY 1ST</span>
+
+        <div class="lang-switcher">
+            <button class="lang-btn-small" onclick="updateLang('en')">English</button>
+            <button class="lang-btn-small" onclick="updateLang('es')">Español</button>
+            <button class="lang-btn-small" onclick="updateLang('it')">Italiano</button>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                banner: "Engagement Party",
+                header: "The Honor of Your Presence is Requested",
+                subHeader: "To Celebrate the Engagement of",
+                and: "and",
+                footer: "A Soirée of Splendor and High Rejoicing<br>to commence the journey of a lifetime",
+                websiteBtn: "Access our Website",
+                rsvpBtn: "RSVP for Engagement Party",
+                deadline: "R.S.V.P. BY MAY 1ST"
+            },
+            es: {
+                banner: "Fiesta de Compromiso",
+                header: "Tenemos el honor de solicitar su presencia",
+                subHeader: "Para celebrar el compromiso de",
+                and: "y",
+                footer: "Una velada de esplendor y alegría<br>para comenzar el viaje de toda una vida",
+                websiteBtn: "Visita nuestro sitio web",
+                rsvpBtn: "Confirmar asistencia",
+                deadline: "Favor de confirmar antes del 1 de mayo"
+            },
+            it: {
+                banner: "Festa di Fidanzamento",
+                header: "Abbiamo l'onore di richiedere la vostra presenza",
+                subHeader: "Per celebrare il fidanzamento di",
+                and: "e",
+                footer: "Una serata di splendore e grande gioia<br>per iniziare il viaggio di una vita",
+                websiteBtn: "Visita il nostro sito web",
+                rsvpBtn: "Confermare la partecipazione",
+                deadline: "R.S.V.P. ENTRO IL 1° MAGGIO"
+            }
+        };
+
+        function updateLang(lang, immediate = false) {
+            const data = translations[lang];
+            if (!data) return;
+
+            const applyContent = () => {
+                // Check for existence of each element before setting properties
+                const banner = document.getElementById('banner-text');
+                const header = document.getElementById('header-text');
+                const subHeader = document.getElementById('sub-header');
+                const and = document.getElementById('and-text');
+                const footer = document.getElementById('footer-invite');
+                const deadline = document.getElementById('rsvp-deadline');
+                const websiteBtn = document.getElementById('website-btn');
+                const rsvpBtn = document.getElementById('rsvp-btn');
+
+                if (banner) banner.innerText = data.banner;
+                if (header) header.innerText = data.header;
+                if (subHeader) subHeader.innerText = data.subHeader;
+                if (and) and.innerText = data.and;
+                if (footer) footer.innerHTML = data.footer;
+                if (deadline) deadline.innerText = data.deadline;
+                if (websiteBtn) {
+                    websiteBtn.innerText = data.websiteBtn;
+                    websiteBtn.href = `../?lang=${lang}`;
+                }
+                if (rsvpBtn) rsvpBtn.innerText = data.rsvpBtn;
+            };
+
+            if (immediate) {
+                applyContent();
+            } else {
+                applyContent();
+            }
+        }
+
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const lang = params.get('lang') || 'en';
+            updateLang(lang, true);
+        };
+    </script>
+</body>
+</html>

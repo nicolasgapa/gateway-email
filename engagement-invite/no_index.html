@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1000">
     <title>Engagement Party | Jessica & Nicolas</title>
-    <!-- External Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #c5a059;
-            --dark-gold: #8c6d31;
-            --cream: #fdf5e6;
-            --brown: #3d3225;
-            --bg: #2c241a;
+            /* Gilded Age Palette */
+            --gold: #264e36;           /* Antique Brass */
+            --dark-gold: #4a5a28;
+            --burgundy: #8e3a46;       /* Light Burgundy / Cask Rose */
+            --forest-green: #8e3a46;   /* Deep Victorian Green 1a2e26 */ 
+            --cream: #dce3cf;          /* Parchment Cream */
+            --bg: #dce3cf;             /* Darker shade of Green for depth */
         }
 
         body {
@@ -23,26 +24,27 @@
             margin: 0;
             padding: 0;
             font-family: 'Cormorant Garamond', serif;
-            color: var(--brown);
+            color: var(--forest-green);
         }
 
-        /* Hero Card: High-Definition Fixed Dimensions: 1000x1360 */
+        /* Hero Card */
         .hero-card {
             width: 1000px;
             height: 1360px;
             background-color: var(--cream);
             border: 25px solid transparent;
+            /* Gold Glitter texture frame */
             border-image: url('https://www.transparenttextures.com/patterns/gold-glitter.png') 30 round;
             outline: 6px double var(--gold);
             outline-offset: -20px;
             padding: 100px 80px;
             text-align: center;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
             position: relative;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly; /* Ensures equal vertical spacing between groups */
+            justify-content: space-evenly;
             align-items: center;
             animation: fadeIn 1.2s ease-out;
             overflow: hidden;
@@ -59,15 +61,14 @@
             content: "⚜";
             position: absolute;
             color: var(--gold);
-            font-size: 40px;
-            opacity: 0.4;
+            font-size: 45px;
+            opacity: 0.6;
         }
         .hero-card::before { top: 40px; left: 40px; }
         .hero-card::after { top: 40px; right: 40px; }
 
-        /* Banner Style */
         .engagement-banner {
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 2px solid var(--forest-green);
             display: inline-block;
             padding-bottom: 12px;
             margin: 0;
@@ -77,7 +78,7 @@
             font-size: 34px;
             letter-spacing: 12px;
             text-transform: uppercase;
-            color: var(--dark-gold);
+            color: var(--forest-green);
             margin: 0;
             font-weight: 700;
         }
@@ -93,8 +94,8 @@
             font-size: 24px;
             margin: 0;
             text-transform: uppercase;
-            font-weight: 500;
-            opacity: 0.85;
+            font-weight: 600;
+            color: var(--forest-green);
         }
 
         .celebrate-text {
@@ -102,41 +103,37 @@
             letter-spacing: 6px;
             font-size: 19px;
             margin: 0;
-            opacity: 0.75;
+            opacity: 0.8;
+            color: var(--forest-green);
         }
 
-        .names-group {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        /* Names */
+        /* Names in Burgundy */
         h1 {
             font-family: 'Great Vibes', cursive;
             font-size: 115px; 
-            color: var(--dark-gold);
+            color: var(--burgundy);
             margin: 0;
             font-weight: 400;
-            line-height: 1;
+            line-height: 1.1;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
         }
 
         .and {
             font-style: italic;
             font-size: 46px;
-            margin: 0;
-            opacity: 0.8;
+            margin: 10px 0;
+            color: var(--forest-green);
             font-family: 'Cormorant Garamond', serif;
         }
 
         /* Photo Section */
         .photo-wrapper {
-            margin: 0;
+            margin: 20px 0;
             width: 85%;
             border: 1px solid var(--gold);
-            padding: 10px;
+            padding: 12px;
             background: #fff;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .couple-photo {
@@ -144,10 +141,10 @@
             height: 520px;
             display: block;
             object-fit: cover;
-            filter: sepia(8%) contrast(1.05);
+            filter: contrast(1.02) saturate(0.9);
         }
 
-        /* Logistics Section (Outside the Card) */
+        /* Logistics Section */
         .logistics-section {
             width: 1000px;
             padding: 100px 80px;
@@ -160,7 +157,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 60px; /* Equal spacing between logistics elements */
+            gap: 60px;
         }
 
         .location {
@@ -171,14 +168,15 @@
             margin: 0;
             width: 100%;
             padding: 60px 0;
-            border-top: 1px solid rgba(197, 160, 89, 0.4);
-            border-bottom: 1px solid rgba(197, 160, 89, 0.4);
+            border-top: 1px solid rgba(26, 46, 38, 0.2);
+            border-bottom: 1px solid rgba(26, 46, 38, 0.2);
+            color: var(--forest-green);
         }
 
         .location strong {
             display: block;
             font-weight: 700;
-            color: var(--dark-gold);
+            color: var(--burgundy);
             font-size: 38px;
             margin-bottom: 12px;
         }
@@ -187,7 +185,7 @@
             font-size: 28px;
             letter-spacing: 3px;
             margin: 0;
-            color: var(--dark-gold);
+            color: var(--forest-green);
             text-transform: uppercase;
             line-height: 1.6;
             font-weight: 600;
@@ -206,32 +204,32 @@
             display: inline-block;
             width: 600px;
             padding: 28px 30px;
-            background-color: var(--brown);
+            background-color: var(--forest-green);
             color: var(--cream);
             text-decoration: none;
             font-size: 22px;
             letter-spacing: 5px;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            border: 2px solid var(--brown);
-            border-radius: 4px;
+            border: 2px solid var(--forest-green);
+            border-radius: 0px; /* Sharp corners for Gilded Age look */
             font-weight: 700;
             box-sizing: border-box;
         }
 
         .rsvp-link:hover {
             background-color: transparent;
-            color: var(--brown);
+            color: var(--forest-green);
         }
 
         .deadline {
             font-size: 20px;
             margin: 0;
             display: block;
-            opacity: 0.8;
+            color: var(--burgundy);
             letter-spacing: 5px;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* Language Switcher */
@@ -239,7 +237,7 @@
             width: 100%;
             margin: 0;
             padding-top: 50px;
-            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            border-top: 1px solid rgba(178, 147, 93, 0.3);
             display: flex;
             justify-content: center;
             gap: 50px;
@@ -248,22 +246,21 @@
         .lang-btn-small {
             background: none;
             border: none;
-            color: var(--gold);
+            color: var(--forest-green);
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
             font-size: 24px;
             letter-spacing: 3px;
-            opacity: 0.6;
+            opacity: 0.7;
             text-transform: uppercase;
             font-weight: 600;
         }
 
-        .lang-btn-small:hover { opacity: 1; }
+        .lang-btn-small:hover { opacity: 1; color: var(--burgundy); }
     </style>
 </head>
 <body>
 
-    <!-- HERO CARD (1000x1360) -->
     <div class="hero-card">
         <div class="engagement-banner">
             <h2 id="banner-text">Engagement Party</h2>
@@ -281,11 +278,10 @@
         </div>
 
         <div class="photo-wrapper">
-            <img src="engagement1.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
+            <img src="engagement_1_bw.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
         </div>
     </div>
 
-    <!-- LOGISTICS SECTION (Outside the Card) -->
     <div class="logistics-section">
         <div class="location">
             <strong id="location-name">13384 LAKESIDE TERRACE</strong>
@@ -350,7 +346,6 @@
             if (!data) return;
 
             const applyContent = () => {
-                // Check for existence of each element before setting properties
                 const banner = document.getElementById('banner-text');
                 const header = document.getElementById('header-text');
                 const subHeader = document.getElementById('sub-header');
@@ -372,12 +367,7 @@
                 }
                 if (rsvpBtn) rsvpBtn.innerText = data.rsvpBtn;
             };
-
-            if (immediate) {
-                applyContent();
-            } else {
-                applyContent();
-            }
+            applyContent();
         }
 
         window.onload = () => {

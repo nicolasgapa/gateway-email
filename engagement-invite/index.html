@@ -10,10 +10,10 @@
             /* Gilded Age Palette */
             --gold: #B8982E;
             --dark-gold: #4a5a28;
-            --burgundy: #4a5a28;       // Gold 4a5a28, Green 264e36, burgundy 4a5a28
+            --burgundy: #4a5a28;       /* Gold 4a5a28, Green 264e36, burgundy 4a5a28 */
             --forest-green: #4a5a28;   
-            --cream: #eaeee2;   // Background       
-            --bg: #264e36;      // Nothing         
+            --cream: #eaeee2;   /* Background */       
+            --bg: #264e36;      /* Nothing */         
         }
 
         body {
@@ -30,7 +30,6 @@
         /* Hero Card */
         .hero-card {
             width: 1000px;
-            height: 1360px;
             background-color: var(--cream);
             border: 25px solid transparent;
             /* Gold Glitter texture frame */
@@ -49,6 +48,7 @@
             animation: fadeIn 1.2s ease-out;
             overflow: hidden;
             z-index: 10;
+            gap: 30px; 
         }
 
         @keyframes fadeIn {
@@ -129,7 +129,7 @@
         /* Photo Section */
         .photo-wrapper {
             margin: 20px 0;
-            width: 85%;
+            width: 75%;
             border: 1px solid var(--gold);
             padding: 12px;
             background: #fff;
@@ -138,16 +138,48 @@
 
         .couple-photo {
             width: 100%;
-            height: 520px;
+            height: 450px;
             display: block;
             object-fit: cover;
             filter: contrast(1.02) saturate(0.9);
         }
 
+        /* Location and Time inside Hero Card */
+        .hero-location-time {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hero-location {
+            font-weight: 400;
+            letter-spacing: 5px;
+            font-size: 26px;
+            line-height: 1.4;
+            margin: 0;
+            color: var(--burgundy);
+            text-transform: uppercase;
+        }
+
+        .hero-location strong {
+            display: block;
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .hero-time {
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: var(--burgundy);
+            font-weight: 600;
+        }
+
         /* Logistics Section */
         .logistics-section {
             width: 1000px;
-            padding: 100px 80px;
+            padding: 60px 80px; 
             background-color: var(--cream);
             box-sizing: border-box;
             text-align: center;
@@ -157,28 +189,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 60px;
-        }
-
-        .location {
-            font-weight: 400;
-            letter-spacing: 6px;
-            font-size: 32px;
-            line-height: 1.6;
-            margin: 0;
-            width: 100%;
-            padding: 60px 0;
-            border-top: 1px solid rgba(26, 46, 38, 0.2);
-            border-bottom: 1px solid rgba(26, 46, 38, 0.2);
-            color: var(--forest-green);
-        }
-
-        .location strong {
-            display: block;
-            font-weight: 700;
-            color: var(--burgundy);
-            font-size: 38px;
-            margin-bottom: 12px;
+            gap: 40px; 
         }
 
         .footer-message {
@@ -190,36 +201,6 @@
             line-height: 1.6;
             font-weight: 600;
             font-style: italic;
-        }
-
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 25px;
-            margin: 0;
-        }
-
-        .rsvp-link {
-            display: inline-block;
-            width: 600px;
-            padding: 28px 30px;
-            background-color: var(--forest-green);
-            color: var(--cream);
-            text-decoration: none;
-            font-size: 22px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: 2px solid var(--forest-green);
-            border-radius: 0px; /* Sharp corners for Gilded Age look */
-            font-weight: 700;
-            box-sizing: border-box;
-        }
-
-        .rsvp-link:hover {
-            background-color: transparent;
-            color: var(--forest-green);
         }
 
         .deadline {
@@ -280,23 +261,23 @@
         <div class="photo-wrapper">
             <img src="engagement_2_bw.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
         </div>
+
+        <div class="hero-location-time">
+            <div class="hero-location">
+                <strong id="location-name">13384 LAKESIDE TERRACE</strong>
+                COOPER CITY, FLORIDA
+            </div>
+            <div class="hero-time" id="event-time">
+                at 7:00 PM
+            </div>
+        </div>
     </div>
 
     <div class="logistics-section">
-        <div class="location">
-            <strong id="location-name">13384 LAKESIDE TERRACE</strong>
-            COOPER CITY, FLORIDA
-        </div>
-
         <p class="footer-message" id="footer-invite">
             A Soirée of Splendor and High Rejoicing<br>
             to commence the journey of a lifetime
         </p>
-        
-        <div class="button-group">
-            <a href="https://jessandnico.rsvpify.com" class="rsvp-link" id="rsvp-btn" target="_blank">RSVP for Engagement Party</a>
-            <a href="../" class="rsvp-link" id="website-btn" target="_blank">Access our Website</a>
-        </div>
         
         <span class="deadline" id="rsvp-deadline">R.S.V.P. BY MAY 1ST</span>
 
@@ -315,19 +296,17 @@
                 subHeader: "To Celebrate the Engagement of",
                 and: "and",
                 footer: "A Soirée of Splendor and High Rejoicing<br>to commence the journey of a lifetime",
-                websiteBtn: "Access our Website",
-                rsvpBtn: "RSVP for Engagement Party",
-                deadline: "R.S.V.P. BY MAY 1ST"
+                deadline: "R.S.V.P. BY MAY 1ST",
+                time: "at 7:00 PM"
             },
             es: {
                 banner: "Fiesta de Compromiso",
-                header: "Nos honraría contar con su presencia",
-                subHeader: "para celebrar nuestro compromiso",
+                header: "Tenemos el honor de solicitar su presencia",
+                subHeader: "Para celebrar el compromiso de",
                 and: "y",
                 footer: "Una velada de esplendor y alegría<br>para comenzar el viaje de toda una vida",
-                websiteBtn: "Visita nuestro sitio web",
-                rsvpBtn: "Confirmar asistencia",
-                deadline: "Favor de confirmar antes del 1 de mayo"
+                deadline: "Favor de confirmar antes del 1 de mayo",
+                time: "a las 7:00 PM"
             },
             it: {
                 banner: "Festa di Fidanzamento",
@@ -335,9 +314,8 @@
                 subHeader: "Per celebrare il fidanzamento di",
                 and: "e",
                 footer: "Una serata di splendore e grande gioia<br>per iniziare il viaggio di una vita",
-                websiteBtn: "Visita il nostro sito web",
-                rsvpBtn: "Confermare la partecipazione",
-                deadline: "R.S.V.P. ENTRO IL 1° MAGGIO"
+                deadline: "R.S.V.P. ENTRO IL 1° MAGGIO",
+                time: "alle 19:00"
             }
         };
 
@@ -352,8 +330,7 @@
                 const and = document.getElementById('and-text');
                 const footer = document.getElementById('footer-invite');
                 const deadline = document.getElementById('rsvp-deadline');
-                const websiteBtn = document.getElementById('website-btn');
-                const rsvpBtn = document.getElementById('rsvp-btn');
+                const time = document.getElementById('event-time');
 
                 if (banner) banner.innerText = data.banner;
                 if (header) header.innerText = data.header;
@@ -361,11 +338,7 @@
                 if (and) and.innerText = data.and;
                 if (footer) footer.innerHTML = data.footer;
                 if (deadline) deadline.innerText = data.deadline;
-                if (websiteBtn) {
-                    websiteBtn.innerText = data.websiteBtn;
-                    websiteBtn.href = `../?lang=${lang}`;
-                }
-                if (rsvpBtn) rsvpBtn.innerText = data.rsvpBtn;
+                if (time) time.innerText = data.time;
             };
             applyContent();
         }

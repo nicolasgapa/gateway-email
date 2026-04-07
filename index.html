@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Gilded Nuptials | Jessica & Nicolas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Added UnifrakturMaguntia for the newspaper masthead -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
@@ -23,6 +24,7 @@
         }
 
         .name-font { font-family: 'Great Vibes', cursive; }
+        .newspaper-font { font-family: 'UnifrakturMaguntia', serif; }
         
         .gold-border {
             border: 2px solid var(--gold);
@@ -316,8 +318,14 @@
     <header class="pt-16 pb-16 text-center bg-white border-b-8 border-double border-[#c5a059]">
         <div class="max-w-[90vw] mx-auto px-4">
             
-            <!-- The Wedding Times Logo -->
-            <img src="https://storage.googleapis.com/chat-factory-attachments-public/2p6023y324iupnxyi1t3o0o6ylyz" alt="The Wedding Times" class="mx-auto mb-12 w-full max-w-4xl px-4 object-contain">
+            <!-- The Wedding Times Text Logo -->
+            <div class="mx-auto mb-12 w-full max-w-5xl text-center">
+                <div class="newspaper-font text-6xl md:text-[6rem] lg:text-[8.5rem] leading-none text-[#2d3436] pb-4 border-b-2 border-[#2d3436]">
+                    The Wedding Times
+                </div>
+                <!-- The classic thick secondary line under the masthead -->
+                <div class="border-b-[4px] border-[#2d3436] mt-[3px]"></div>
+            </div>
 
             <p class="uppercase tracking-[0.4em] text-base lg:text-xl mb-6 text-[#a67c37] font-bold">
                 <span lang-content="en">We invite you to celebrate the union of</span>

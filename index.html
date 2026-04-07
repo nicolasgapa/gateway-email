@@ -162,7 +162,6 @@
         .nav-arrow:hover:not(:disabled) { color: var(--dark-gold); }
         .nav-arrow:disabled { opacity: 0.2; cursor: default; }
 
-        /* REVERTED LAYOUT CLASSES */
         .book-wrapper {
             width: 90vw;
             max-width: 1400px;
@@ -223,7 +222,6 @@
             .book-text-pane { padding: 2.5rem 1.5rem; text-align: left; align-items: flex-start; }
             .book-text-pane p { font-size: 1.25rem; line-height: 1.7; } 
             .gallery-grid { grid-template-columns: repeat(1, 1fr); gap: 1rem; }
-            .nav-arrow { font-size: 1rem; letter-spacing: 1px; }
         }
 
     </style>
@@ -272,7 +270,6 @@
         <button id="toggle-it" class="lang-btn" onclick="setLanguage('it')">IT</button>
     </div>
 
-    <!-- Reverted Header Constraint -->
     <header class="pt-16 pb-8 md:pt-20 md:pb-12 text-center bg-transparent">
         <div class="max-w-[90vw] mx-auto px-4">
             
@@ -289,7 +286,6 @@
             </h1>
             
             <div class="flex flex-col items-center justify-center space-y-2 mt-6">
-                <!-- Location updated to Long Island, New York -->
                 <p class="text-xs sm:text-sm md:text-base uppercase tracking-[0.15em] md:tracking-[0.2em] text-gray-700 font-semibold">
                     <span lang-content="en">April 2–4, 2027 &bull; Long Island, New York</span>
                     <span lang-content="es">2 al 4 de abril de 2027 &bull; Long Island, Nueva York</span>
@@ -302,7 +298,6 @@
         </div>
     </header>
 
-    <!-- Reverted Nav Constraint -->
     <nav class="bg-transparent sticky top-0 z-50 py-6 mb-12">
         <div class="max-w-[1600px] mx-auto flex justify-center flex-wrap gap-x-6 gap-y-4 md:gap-x-12 uppercase text-xs sm:text-sm md:text-base tracking-[0.1em] md:tracking-[0.15em] text-gray-800">
             <button onclick="switchTab('home')" class="nav-link active" id="btn-home">
@@ -338,7 +333,6 @@
         </div>
     </nav>
 
-    <!-- Reverted Main Restraint -->
     <main class="w-[90vw] max-w-[1600px] mx-auto px-4 py-20">
         
         <section id="home" class="tab-content active">
@@ -443,15 +437,34 @@
 
                 </div>
 
-                <div class="book-footer">
-                    <button class="nav-arrow text-sm sm:text-lg" id="prevBtn" onclick="changeSlide(-1)">&larr; <span lang-content="en">Prev</span><span lang-content="es">Ant</span><span lang-content="it">Prec</span></button>
-                    <div class="font-bold text-lg sm:text-2xl text-gray-800"><span id="chapNum">1</span> / 8</div>
-                    <button class="nav-arrow text-sm sm:text-lg" id="nextBtn" onclick="changeSlide(1)"><span lang-content="en">Next</span><span lang-content="es">Sig</span><span lang-content="it">Succ</span> &rarr;</button>
+                <!-- REDESIGNED BOOK FOOTER -->
+                <div class="flex justify-between items-center px-6 md:px-12 py-6 border-t border-gray-100">
+                    <div class="font-bold text-xl sm:text-2xl text-gray-400 italic font-serif">
+                        <span id="chapNum" class="text-[#a67c37] text-2xl sm:text-3xl">1</span> <span class="mx-1">/</span> 8
+                    </div>
+                    <div class="flex items-center gap-6 sm:gap-12">
+                        <button class="nav-arrow group flex items-center gap-2 text-sm sm:text-lg" id="prevBtn" onclick="changeSlide(-1)">
+                            <span class="text-2xl group-hover:-translate-x-1 transition-transform">&larr;</span>
+                            <span lang-content="en">Prev</span><span lang-content="es">Ant</span><span lang-content="it">Prec</span>
+                        </button>
+                        <button class="nav-arrow group flex items-center gap-2 text-sm sm:text-lg" id="nextBtn" onclick="changeSlide(1)">
+                            <span lang-content="en">Next</span><span lang-content="es">Sig</span><span lang-content="it">Succ</span>
+                            <span class="text-2xl group-hover:translate-x-1 transition-transform">&rarr;</span>
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </section>
 
         <section id="gallery" class="tab-content">
+            <div class="text-center mb-10 md:mb-16">
+                <h2 class="text-3xl sm:text-5xl md:text-7xl lg:text-[5.5rem] uppercase tracking-[0.2em] font-light text-gray-800">
+                    <span lang-content="en">The Visual Archive</span>
+                    <span lang-content="es">El Archivo Visual</span>
+                    <span lang-content="it">L'Archivo Visuale</span>
+                </h2>
+            </div>
             <div class="gallery-grid w-full">
                 <script>
                     for(let i=1; i<=20; i++) {
@@ -462,9 +475,8 @@
         </section>
 
         <section id="events" class="tab-content">
-            <div class="flex flex-col lg:flex-row-reverse gap-10 md:gap-16 items-start text-center md:text-left max-w-[1400px] mx-auto">
+            <div class="flex flex-col lg:flex-row-reverse gap-10 md:gap-16 items-start text-center md:text-left w-full">
                 
-                <!-- Removed sticky behavior to let it scroll up naturally -->
                 <div class="w-full lg:w-1/2 gold-border relative">
                     <img id="event_wedding" class="w-full h-[350px] md:h-[600px] object-cover md:object-top">
                 </div>
@@ -550,18 +562,18 @@
 
         <section id="accommodation" class="tab-content text-center">
             
-            <div class="gold-border mb-10 w-full max-w-[1000px] mx-auto">
+            <div class="gold-border mb-10 w-full mx-auto">
                 <img id="mansion_entrance" class="w-full h-[250px] md:h-[450px] object-cover" alt="The Mansion Entrance">
             </div>
 
-            <div class="text-xl sm:text-2xl lg:text-3xl italic text-gray-700 font-medium w-full max-w-[1200px] mx-auto px-4">
+            <div class="text-xl sm:text-2xl lg:text-3xl italic text-gray-700 font-medium w-full max-w-4xl mx-auto px-4">
                 <p>
                     <span lang-content="en">We are delighted to announce that the celebration shall be held entirely upon the Mansion grounds.</span>
                     <span lang-content="es">Nos complace anunciar que la celebración se llevará a cabo en su totalidad en los terrenos de la Mansión.</span>
                     <span lang-content="it">Siamo lieti di annunciare che i festeggiamenti si terranno interamente all'interno della tenuta della Villa.</span>
                 </p>
                 
-                <div class="gold-border p-6 md:p-12 mt-12 bg-white shadow-sm w-full mx-auto">
+                <div class="gold-border p-6 md:p-12 mt-12 bg-white shadow-sm">
                     <p class="text-lg sm:text-xl lg:text-2xl font-bold text-[#a67c37] mb-6 not-italic">
                          <span lang-content="en">Please Note: The Mansion is currently updating its booking system. To secure your reservation within our exclusive room block for April 2nd through April 4th, 2027, please contact the hotel directly:</span>
                          <span lang-content="es">Atención: La Mansión está actualizando su sistema de reservas. Para asegurar su habitación en nuestro bloque exclusivo del 2 al 4 de abril de 2027, comuníquese directamente con el hotel:</span>
@@ -594,7 +606,7 @@
                 </div>
             </div>
             
-            <div class="flex justify-center mt-12 w-full">
+            <div class="flex justify-center mt-12">
                 <a href="https://www.themansionatglencove.com/" target="_blank" class="block p-6 md:p-10 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group max-w-xl w-full bg-white shadow-sm hover:shadow-md">
                     <h4 class="text-xl sm:text-3xl lg:text-4xl group-hover:text-white uppercase tracking-[0.2em] mb-2 font-bold">
                         <span lang-content="en">Visit The Mansion</span>
@@ -610,31 +622,28 @@
             </div>
         </section>
 
-        <!-- Registry section max-width reverted to keep grid structured well -->
         <section id="registry" class="tab-content">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-[1400px] mx-auto px-2">
-                
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 px-2 max-w-5xl mx-auto">
                 <a href="https://www.williams-sonoma.com/registry/lk8kwq5chw/registry-list.html" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
-                    <h4 class="text-sm sm:text-lg md:text-xl lg:text-2xl text-center uppercase tracking-[0.1em] font-bold w-full break-words">Williams<br>Sonoma</h4>
+                    <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Williams<br>Sonoma</h4>
                 </a>
 
                 <a href="https://www.amazon.com/wedding/guest-view/3UNPIMCPLNJJF" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
-                    <h4 class="text-sm sm:text-lg md:text-xl lg:text-2xl text-center uppercase tracking-[0.1em] font-bold w-full break-words">Amazon</h4>
+                    <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Amazon</h4>
                 </a>
 
-                <!-- Anthropologie text scaled slightly down and tracking tightened so 'E' won't drop -->
                 <a href="https://www.anthropologie.com/registry/listing?registryId=C3B0CB972C8D" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
-                    <h4 class="text-xs sm:text-[0.9rem] md:text-base lg:text-[1.15rem] text-center uppercase tracking-tight md:tracking-normal font-bold w-full whitespace-nowrap">Anthropologie</h4>
+                    <h4 class="text-xs sm:text-[0.9rem] md:text-base text-center uppercase tracking-tight font-bold w-full whitespace-nowrap">Anthropologie</h4>
                 </a>
 
                 <a href="https://www.crateandbarrel.com/gift-registry/jessica-gutstein-and-nicolas-gachancipa-parga/r7402739" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
-                    <h4 class="text-sm sm:text-lg md:text-xl lg:text-2xl text-center uppercase tracking-[0.1em] font-bold w-full break-words">Crate &<br>Barrel</h4>
+                    <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Crate &<br>Barrel</h4>
                 </a>
             </div>
         </section>
 
         <section id="rsvp" class="tab-content text-center w-full">
-            <div class="flex justify-center mt-8 w-full max-w-[1200px] mx-auto">
+            <div class="flex justify-center mt-8">
                 <a href="https://www.theknot.com/us/jessica-gutstein-and-nicolas-gachancipa-apr-2027/rsvp" target="_blank" class="block p-8 md:p-16 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group max-w-2xl w-full bg-white shadow-md">
                     <h4 class="text-2xl sm:text-4xl md:text-5xl group-hover:text-white uppercase tracking-[0.2em] mb-4 font-bold">
                         <span lang-content="en">RSVP Online</span>

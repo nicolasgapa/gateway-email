@@ -18,27 +18,24 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background-color: #e5e5e5; /* Slightly darker background to make the "paper" pop */
+            background-color: #e5e5e5; /* The "table" behind the newspaper */
             color: var(--charcoal);
             overflow-x: hidden; 
             background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm76-26c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448-1 1 1zm-11 30c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448-1 1 1zm-45-40c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448-1 1 1zm12-24c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448-1 1 1z' fill='%23c5a059' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
 
-        /* * CENTRAL WRAPPER
-         * This creates the 1/4 side margins on laptops. 
-         * On mobile, it expands to full width.
-         */
+        /* CENTRAL NEWSPAPER WRAPPER */
         .main-container {
             width: 100%;
-            max-width: 1200px; /* Limits the "spread" of the newspaper on desktop */
+            max-width: 1200px; /* This ensures the 1/4 spacing on sides on laptops */
             margin: 0 auto;
             background-color: var(--off-white);
-            box-shadow: 0 0 50px rgba(0,0,0,0.1);
+            box-shadow: 0 0 60px rgba(0,0,0,0.15);
             min-height: 100vh;
         }
 
         @media (min-width: 1200px) {
-            body { padding: 40px 0; } /* Spacing at top and bottom of the "paper" */
+            body { padding: 40px 0; }
         }
 
         .newspaper-font { font-family: 'UnifrakturMaguntia', serif; }
@@ -138,7 +135,7 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .book-wrapper {
@@ -154,7 +151,7 @@
         }
 
         @media (min-width: 1024px) {
-            .book-content-area { min-height: 600px; }
+            .book-content-area { min-height: 700px; }
         }
 
         .book-slide {
@@ -164,6 +161,7 @@
             pointer-events: none;
             transition: opacity 0.4s ease-in-out;
             background: white;
+            height: 100%;
         }
 
         .book-slide.active {
@@ -177,13 +175,13 @@
 
         .book-text-pane {
             width: 55%;
-            padding: 3rem;
+            padding: 4rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .book-text-pane p { font-size: 1.5rem; line-height: 1.6; }
+        .book-text-pane p { font-size: 1.4rem; line-height: 1.7; }
 
         @media (max-width: 768px) {
             .book-slide { flex-direction: column !important; }
@@ -192,7 +190,6 @@
             .book-text-pane { padding: 2rem 1rem; }
             .book-text-pane p { font-size: 1.15rem; } 
         }
-
     </style>
 </head>
 <body class="min-h-screen lang-en text-center md:text-left">
@@ -235,16 +232,16 @@
             };
         </script>
 
-        <div class="flex justify-end p-4 gap-2">
+        <div class="flex justify-end p-6 gap-2">
             <button id="toggle-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
             <button id="toggle-es" class="lang-btn" onclick="setLanguage('es')">ES</button>
             <button id="toggle-it" class="lang-btn" onclick="setLanguage('it')">IT</button>
         </div>
 
-        <header class="pt-8 pb-8 text-center">
+        <header class="pt-4 pb-8 text-center">
             <div class="max-w-[90%] mx-auto px-4">
                 <div class="mx-auto mb-10 w-full text-center">
-                    <div class="newspaper-font text-[3rem] sm:text-[5rem] lg:text-[7rem] leading-none text-[#2d3436]">
+                    <div class="newspaper-font text-[3.5rem] sm:text-[5rem] lg:text-[7.5rem] leading-none text-[#2d3436]">
                         The Wedding Times
                     </div>
                     <div class="h-[4px] bg-[#2d3436] w-full mt-4 mb-[3px]"></div>
@@ -266,53 +263,138 @@
             </div>
         </header>
 
-        <nav class="sticky top-0 z-50 py-6 mb-8 bg-[#fdfaf6] border-b border-gray-100">
-            <div class="max-w-4xl mx-auto flex justify-center flex-wrap gap-x-6 gap-y-4 uppercase text-xs sm:text-sm tracking-[0.15em] text-gray-800">
-                <button onclick="switchTab('home')" class="nav-link active" id="btn-home"><span lang-content="en">Our Story</span><span lang-content="es">Nuestra Historia</span><span lang-content="it">La Nostra Storia</span></button>
-                <button onclick="switchTab('gallery')" class="nav-link" id="btn-gallery"><span lang-content="en">Gallery</span><span lang-content="es">Galería</span><span lang-content="it">Galleria</span></button>
-                <button onclick="switchTab('events')" class="nav-link" id="btn-events"><span lang-content="en">Events</span><span lang-content="es">Eventos</span><span lang-content="it">Eventi</span></button>
-                <button onclick="switchTab('accommodation')" class="nav-link" id="btn-accommodation"><span lang-content="en">Accommodation</span><span lang-content="es">Alojamiento</span><span lang-content="it">Alloggio</span></button>
-                <button onclick="switchTab('registry')" class="nav-link" id="btn-registry"><span lang-content="en">Registry</span><span lang-content="es">Registro</span><span lang-content="it">Lista Nozze</span></button>
-                <button onclick="switchTab('rsvp')" class="nav-link" id="btn-rsvp"><span>RSVP</span></button>
+        <nav class="sticky top-0 z-50 py-6 mb-12 bg-[#fdfaf6] border-b border-gray-100">
+            <div class="max-w-4xl mx-auto flex justify-center flex-wrap gap-x-8 gap-y-4 uppercase text-xs sm:text-sm tracking-[0.15em] text-gray-800">
+                <button onclick="switchTab('home')" class="nav-link active" id="btn-home">
+                    <span lang-content="en">Our Story</span><span lang-content="es">Nuestra Historia</span><span lang-content="it">La Nostra Storia</span>
+                </button>
+                <button onclick="switchTab('gallery')" class="nav-link" id="btn-gallery">
+                    <span lang-content="en">Gallery</span><span lang-content="es">Galería</span><span lang-content="it">Galleria</span>
+                </button>
+                <button onclick="switchTab('events')" class="nav-link" id="btn-events">
+                    <span lang-content="en">Events</span><span lang-content="es">Eventos</span><span lang-content="it">Eventi</span>
+                </button>
+                <button onclick="switchTab('accommodation')" class="nav-link" id="btn-accommodation">
+                    <span lang-content="en">Accommodation</span><span lang-content="es">Alojamiento</span><span lang-content="it">Alloggio</span>
+                </button>
+                <button onclick="switchTab('registry')" class="nav-link" id="btn-registry">
+                    <span lang-content="en">Registry</span><span lang-content="es">Registro</span><span lang-content="it">Lista Nozze</span>
+                </button>
+                <button onclick="switchTab('rsvp')" class="nav-link" id="btn-rsvp">
+                    <span>RSVP</span>
+                </button>
             </div>
         </nav>
 
-        <main class="px-6 md:px-12 py-10">
+        <main class="px-6 md:px-16 py-10">
             
             <section id="home" class="tab-content active">
                 <div class="gold-border shadow-sm book-wrapper">
                     <div id="slider-container" class="book-content-area">
+                        
                         <div class="book-slide active flex flex-col lg:flex-row w-full">
                             <div class="book-image-pane border-b lg:border-b-0 lg:border-r border-[#c5a059]">
                                 <img id="story_1">
                             </div>
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">I. <span lang-content="en">The Prologue</span><span lang-content="es">El Prólogo</span><span lang-content="it">Il Prologo</span></h3>
-                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Dearest Reader, we present the chronicles of Jessica and Nicolas. Their narrative is one woven of profound affection, steadfast friendship, and perhaps a touch of mathematical precision...</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Querido lector, presentamos las crónicas de Jessica y Nicolás. Su narrativa está tejida de un profundo afecto, una amistad inquebrantable...</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Carissimo Lettore, presentiamo le cronache di Jessica e Nicolas. Il loro racconto è intessuto di un profondo affetto...</p>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Dearest Reader, we present the chronicles of Jessica and Nicolas. Their narrative is one woven of profound affection, steadfast friendship, and perhaps a touch of mathematical precision. It was a courtship both slow and gentle, commencing in the autumn of 2023.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Querido lector, presentamos las crónicas de Jessica y Nicolás. Su narrativa está tejida de un profundo afecto, una amistad inquebrantable y, tal vez, un toque de precisión matemática. Fue un noviazgo lento y gentil, que comenzó en el otoño de 2023.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Carissimo Lettore, presentiamo le cronache di Jessica e Nicolas. Il loro racconto è intessuto di un profondo affetto, una salda amicizia e forse un tocco di precisione matematica. È stato un corteggiamento lento e gentile, iniziato nell'autunno del 2023.</p>
                             </div>
                         </div>
-                        
+
                         <div class="book-slide flex flex-col lg:flex-row-reverse w-full">
                             <div class="book-image-pane border-b lg:border-b-0 lg:border-l border-[#c5a059]">
                                 <img id="story_2">
                             </div>
                             <div class="book-text-pane">
-                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">II. <span lang-content="en">Origins</span><span lang-content="es">Orígenes</span><span lang-content="it">Origini</span></h3>
-                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Two souls from distant shores: Nicolas, hailing from the peaks of Colombia, and Jessica, a daughter of the sun-drenched South Florida...</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Dos almas de orillas distantes: Nicolás, proveniente de las cumbres de Colombia...</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Due anime da rive lontane: Nicolas, proveniente dalle vette della Colombia...</p>
+                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">II. <span lang-content="en">Origins</span><span lang-content="es">Orígenes</span><span lang-content="it">Origini</span></h3>
+                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Two souls from distant shores: Nicolas, hailing from the peaks of Colombia, and Jessica, a daughter of the sun-drenched South Florida. Though separated by vast geographies, they shared a common devotion to the grand tapestry of history.</p>
+                                 <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Dos almas de orillas distantes: Nicolás, proveniente de las cumbres de Colombia, y Jessica, hija de la soleada Florida. Aunque separados por vastas geografías, compartían una devoción común por el gran tapiz de la historia.</p>
+                                 <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Due anime da rive lontane: Nicolas, proveniente dalle vette della Colombia, e Jessica, figlia della soleggiata Florida. Sebbene separati da vaste geografie, condividevano una comune devozione per il grande arazzo della storia.</p>
                             </div>
                         </div>
-                        
+
+                        <div class="book-slide flex flex-col lg:flex-row w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-r border-[#c5a059]">
+                                <img id="story_3">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">III. <span lang-content="en">The Encounter</span><span lang-content="es">El Encuentro</span><span lang-content="it">L'Incontro</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Their meeting transpired amidst the vibrant spirit of Miami in September 2023. For years, they had existed as strangers, observing one another from opposite ends of rooms with a perceived lack of attention. Little did they know the universe was arranging the scene for its greatest love story.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su encuentro ocurrió bajo el espíritu vibrante de Miami en septiembre de 2023. Durante años, habían existido como extraños, observándose mutuamente desde extremos opuestos de la habitación con una aparente falta de atención.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il loro incontro è avvenuto nel vivace spirito di Miami nel settembre 2023. Per anni erano esistiti come estranei, osservandosi da estremità opposte delle stanze con una percepita mancanza di attenzione.</p>
+                            </div>
                         </div>
 
-                    <div class="flex justify-between items-center px-8 py-6 border-t border-gray-100">
-                        <div class="font-bold text-xl text-gray-400 italic font-serif">
+                        <div class="book-slide flex flex-col lg:flex-row-reverse w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-l border-[#c5a059]">
+                                <img id="story_4">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">IV. <span lang-content="en">Manhattan Adventures</span><span lang-content="es">Aventuras en Manhattan</span><span lang-content="it">Avventure a Manhattan</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">The second rendezvous occurred in the grand metropolis of New York. A weekend of laughter and spirited adventures was spent traversing their favorite city in the world. They jokingly whispered of a future in this beautiful metropolis, never guessing how soon it would arrive.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">La segunda cita tuvo lugar en la gran metrópolis de Nueva York. Pasaron un fin de semana de risas y aventuras recorriendo su ciudad favorita del mundo.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il secondo appuntamento è avvenuto nella grande metropoli di New York. Un fine settimana di risate e avventure trascorso attraversando la loro città preferita al mondo.</p>
+                            </div>
+                        </div>
+
+                        <div class="book-slide flex flex-col lg:flex-row w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-r border-[#c5a059]">
+                                <img id="story_5">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">V. <span lang-content="en">The Hudson River</span><span lang-content="es">El Río Hudson</span><span lang-content="it">Il Fiume Hudson</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Destiny soon called them to Jersey City. Jessica, whose father was raised in Brooklyn, had spent her life mocking the Jersey shores from the eastern banks of the Hudson. As Jessica often explains to her father now: “It's on the other side of the Hudson River, Dad.”</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El destino pronto los llamó a Jersey City. Jessica, cuyo padre se crió en Brooklyn, había pasado su vida burlándose de las costas de Jersey.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il destino li chiamò presto a Jersey City. Jessica, il cui padre è cresciuto a Brooklyn, aveva passato la vita a deridere le coste del Jersey.</p>
+                            </div>
+                        </div>
+
+                        <div class="book-slide flex flex-col lg:flex-row-reverse w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-l border-[#c5a059]">
+                                <img id="story_6">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VI. <span lang-content="en">The Covenant</span><span lang-content="es">El Pacto</span><span lang-content="it">Il Patto</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">On the twenty-second of August, 2025, Nicolas requested Jessica’s hand in marriage. It was a moment of profound commitment, a promise of a future built upon the bedrock of their meaningful friendship and shared aspirations amidst the backdrop of history.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El veintidós de agosto de 2025, Nicolás pidió la mano de Jessica en matrimonio. Fue un momento de profundo compromiso.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il ventidue agosto 2025, Nicolas ha chiesto la mano di Jessica. È stato un momento di profondo impegno.</p>
+                            </div>
+                        </div>
+
+                        <div class="book-slide flex flex-col lg:flex-row w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-r border-[#c5a059]">
+                                <img id="story_7">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VII. <span lang-content="en">Jersey Life</span><span lang-content="es">Vida en Jersey</span><span lang-content="it">Vita a Jersey</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">They now dwell in the historic downtown of Jersey City, proud of their neighborhood. Their affection was so infectious that even Jessica’s father, a staunch Brooklynite, has converted his allegiances to the charms of the "Sixth Borough."</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Ahora residen en el centro histórico de Jersey City, orgullosos de su vecindario.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Ora vivono nel centro storico di Jersey City, orgogliosi del loro quartiere.</p>
+                            </div>
+                        </div>
+
+                        <div class="book-slide flex flex-col lg:flex-row-reverse w-full">
+                            <div class="book-image-pane border-b lg:border-b-0 lg:border-l border-[#c5a059]">
+                                <img id="story_8">
+                            </div>
+                            <div class="book-text-pane">
+                                <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VIII. <span lang-content="en">The Eternal Bond</span><span lang-content="es">El Vínculo Eterno</span><span lang-content="it">Il Legame Eterno</span></h3>
+                                <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Their love story is a noble pursuit of mutual growth and true friendship. It makes them individually the best versions of themselves as they prepare to dance within the grand halls of The Manor at Glen Cove. Sincerely, Jessica and Nicolas.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su historia de amor es una noble búsqueda del crecimiento mutuo y la verdadera amistad.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">La loro storia d'amore è una nobile ricerca di crescita reciproca e vera amicizia.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-between items-center px-10 py-6 border-t border-gray-100">
+                        <div class="font-bold text-2xl text-gray-400 italic font-serif">
                             <span id="chapNum" class="text-[#a67c37]">1</span> / 8
                         </div>
-                        <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-10">
                             <button class="nav-arrow group flex items-center gap-2" id="prevBtn" onclick="changeSlide(-1)">
                                 <span class="text-xl">&larr;</span> <span lang-content="en">Prev</span><span lang-content="es">Ant</span><span lang-content="it">Prec</span>
                             </button>
@@ -326,7 +408,9 @@
 
             <section id="gallery" class="tab-content">
                 <div class="text-center mb-10">
-                    <h2 class="text-4xl lg:text-6xl uppercase tracking-[0.2em] font-light text-gray-800">Archive</h2>
+                    <h2 class="text-4xl lg:text-7xl uppercase tracking-[0.2em] font-light text-gray-800">
+                        <span lang-content="en">The Visual Archive</span><span lang-content="es">El Archivo Visual</span><span lang-content="it">L'Archivo Visuale</span>
+                    </h2>
                 </div>
                 <div class="gallery-grid">
                     <script>
@@ -338,37 +422,74 @@
             </section>
 
             <section id="events" class="tab-content">
-                 <div class="bg-white p-10 border gold-border shadow-sm text-center">
-                    <h3 class="text-4xl text-[#a67c37] mb-4">The Wedding</h3>
-                    <p class="uppercase tracking-widest font-bold">Saturday, April 3, 2027</p>
-                    <p class="italic text-gray-600 mt-2">The Mansion at Glen Cove</p>
-                 </div>
+                <div class="flex flex-col lg:flex-row-reverse gap-12 items-start text-center md:text-left">
+                    <div class="w-full lg:w-1/2 gold-border">
+                        <img id="event_wedding" class="w-full h-[400px] lg:h-[600px] object-cover">
+                    </div>
+                    <div class="w-full lg:w-1/2 space-y-12">
+                        <div class="bg-white p-10 border border-gray-100 shadow-sm">
+                            <h3 class="text-4xl text-[#a67c37] mb-2 font-medium">The Night Before</h3>
+                            <p class="uppercase font-bold text-gray-800">Friday, April 2, 2027</p>
+                            <p class="text-gray-600 mt-2 italic text-lg">8:00 PM – 10:00 PM</p>
+                            <div class="mt-6 text-gray-600">
+                                <p>The Mansion at Glen Cove</p>
+                                <p class="text-sm">200 Dosoris Lane, Glen Cove, NY 11542</p>
+                            </div>
+                            <p class="mt-6 pt-4 border-t border-gray-100 text-sm font-bold uppercase tracking-widest">Attire: Formal</p>
+                        </div>
+                        <div class="ornament opacity-30">❧</div>
+                        <div class="bg-white p-10 border border-gray-100 shadow-sm">
+                            <h3 class="text-4xl text-[#a67c37] mb-2 font-medium">The Wedding</h3>
+                            <p class="uppercase font-bold text-gray-800">Saturday, April 3, 2027</p>
+                            <div class="mt-6 space-y-2 text-gray-700">
+                                <p>5:00 PM - Ceremony</p>
+                                <p>6:00 PM - Cocktails</p>
+                                <p>7:00 PM - Reception</p>
+                            </div>
+                            <p class="mt-6 pt-4 border-t border-gray-100 text-sm font-bold uppercase tracking-widest">Attire: Black Tie</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="accommodation" class="tab-content text-center">
-                </section>
+                <div class="gold-border mb-10"><img id="mansion_entrance" class="w-full h-[300px] lg:h-[450px] object-cover"></div>
+                <div class="text-2xl italic text-gray-700 max-w-4xl mx-auto space-y-10">
+                    <p><span lang-content="en">We are delighted to announce that the celebration shall be held entirely upon the Mansion grounds.</span></p>
+                    <div class="gold-border p-10 bg-white shadow-sm not-italic">
+                        <p class="text-xl font-bold text-[#a67c37] mb-4">Reservation Details:</p>
+                        <p class="text-lg text-gray-800">Phone: (646) 518-8771</p>
+                        <p class="text-lg text-gray-800">Email: gcmreservations@glencovemansion.com</p>
+                        <p class="mt-6 text-sm text-gray-500 italic">Mention the Gachancipa/Gutstein Wedding when booking.</p>
+                    </div>
+                </div>
+            </section>
 
             <section id="registry" class="tab-content">
-                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                     </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                    <a href="https://www.williams-sonoma.com/registry/lk8kwq5chw/registry-list.html" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">WILLIAMS SONOMA</a>
+                    <a href="https://www.amazon.com/wedding/guest-view/3UNPIMCPLNJJF" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">AMAZON</a>
+                    <a href="https://www.anthropologie.com/registry/listing?registryId=C3B0CB972C8D" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">ANTHROPOLOGIE</a>
+                    <a href="https://www.crateandbarrel.com/gift-registry/jessica-gutstein-and-nicolas-gachancipa-parga/r7402739" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">CRATE & BARREL</a>
+                </div>
             </section>
 
             <section id="rsvp" class="tab-content text-center">
-                <a href="https://www.theknot.com/us/jessica-gutstein-and-nicolas-gachancipa-apr-2027/rsvp" target="_blank" class="inline-block p-12 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all bg-white shadow-md">
-                    <h4 class="text-3xl uppercase tracking-widest font-bold">RSVP Online</h4>
+                <a href="https://www.theknot.com/us/jessica-gutstein-and-nicolas-gachancipa-apr-2027/rsvp" target="_blank" class="inline-block p-16 border-2 border-[#c5a059] bg-white hover:bg-[#c5a059] hover:text-white transition-all shadow-md">
+                    <h4 class="text-4xl uppercase tracking-widest font-bold">RSVP Online</h4>
+                    <p class="mt-4 italic">Click here to submit your response</p>
                 </a>
             </section>
 
         </main>
 
         <footer class="mt-12 py-12 border-t border-[#c5a059] text-center">
-            <p class="font-serif uppercase text-3xl text-gray-800 tracking-[0.2em]">Jessica & Nicolas</p>
+            <p class="font-serif uppercase text-4xl text-gray-800 tracking-[0.2em]">Jessica & Nicolas</p>
             <p class="text-xs uppercase tracking-[0.4em] text-[#a67c37] mt-4 font-bold">Long Island &bull; MMXXVII</p>
         </footer>
     </div>
 
     <script>
-        /* Countdown Logic */
         function calculateCountdown() {
             const weddingDate = new Date('April 2, 2027 00:00:00').getTime();
             const now = new Date().getTime();
@@ -376,18 +497,20 @@
             const days = Math.ceil(distance / (1000 * 60 * 60 * 24));
             const countdownEl = document.getElementById('countdown');
             if (countdownEl) {
-                countdownEl.innerHTML = days > 0 ? `<span lang-content="en">${days} DAYS TO GO!</span>` : "THE DAY IS HERE!";
+                if (days > 0) {
+                    countdownEl.innerHTML = `<span lang-content="en">${days} DAYS TO GO!</span><span lang-content="es">¡FALTAN ${days} DÍAS!</span><span lang-content="it">${days} GIORNI AL SÌ!</span>`;
+                } else {
+                    countdownEl.innerHTML = `THE DAY IS HERE!`;
+                }
             }
         }
 
-        /* Language Toggle */
         function setLanguage(lang) {
             document.body.className = 'min-h-screen lang-' + lang + ' text-center md:text-left';
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
             document.getElementById('toggle-' + lang).classList.add('active');
         }
 
-        /* Tab Switcher */
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
@@ -396,7 +519,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* Slider Logic */
         let currentSlide = 0;
         function changeSlide(direction) {
             const slides = document.querySelectorAll('.book-slide');
@@ -410,7 +532,6 @@
             document.getElementById('nextBtn').disabled = (currentSlide === slides.length - 1);
         }
 
-        /* Image Loader */
         function applyImages() {
             const list = window.IMAGE_LIST;
             const folderPath = list.folder;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement Party | Jessica & Nicolas</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <style>
@@ -10,10 +10,10 @@
             /* Gilded Age Palette */
             --gold: #B8982E;
             --dark-gold: #4a5a28;
-            --burgundy: #4a5a28;       /* Gold 4a5a28, Green 264e36, burgundy 4a5a28 */
+            --burgundy: #4a5a28;
             --forest-green: #4a5a28;   
             --cream: #eaeee2;   /* Background */       
-            --bg: #264e36;      /* Nothing */         
+            --bg: #264e36;      /* Dark Green Outer Background */         
         }
 
         body {
@@ -22,23 +22,33 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
-            padding: 0;
+            padding: 40px 20px; /* Padding for mobile breathing room */
             font-family: 'Cormorant Garamond', serif;
             color: var(--forest-green);
+            min-height: 100vh;
+        }
+
+        /* Container to center everything and provide side spacing on desktop */
+        .page-wrapper {
+            width: 100%;
+            max-width: 800px; /* Limits width on laptops to create the 1/4 side spacing */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Hero Card */
         .hero-card {
-            width: 1000px;
+            width: 100%;
             background-color: var(--cream);
-            border: 25px solid transparent;
+            border: 20px solid transparent;
             /* Gold Glitter texture frame */
             border-image: url('https://www.transparenttextures.com/patterns/gold-glitter.png') 30 round;
             outline: 6px double var(--gold);
-            outline-offset: -20px;
-            padding: 100px 80px;
+            outline-offset: -16px;
+            padding: 80px 40px;
             text-align: center;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
             position: relative;
             box-sizing: border-box;
             display: flex;
@@ -61,11 +71,11 @@
             content: "⚜";
             position: absolute;
             color: var(--gold);
-            font-size: 45px;
+            font-size: clamp(25px, 5vw, 45px); /* Responsive size */
             opacity: 0.6;
         }
-        .hero-card::before { top: 40px; left: 40px; }
-        .hero-card::after { top: 40px; right: 40px; }
+        .hero-card::before { top: 30px; left: 30px; }
+        .hero-card::after { top: 30px; right: 30px; }
 
         .engagement-banner {
             border-bottom: 2px solid var(--forest-green);
@@ -75,8 +85,8 @@
         }
 
         .engagement-banner h2 {
-            font-size: 34px;
-            letter-spacing: 12px;
+            font-size: clamp(20px, 4vw, 34px);
+            letter-spacing: clamp(5px, 1vw, 12px);
             text-transform: uppercase;
             color: var(--burgundy);
             margin: 0;
@@ -90,8 +100,8 @@
         }
 
         .presence-text {
-            letter-spacing: 7px;
-            font-size: 24px;
+            letter-spacing: 5px;
+            font-size: clamp(16px, 3vw, 24px);
             margin: 0;
             text-transform: uppercase;
             font-weight: 600;
@@ -100,8 +110,8 @@
 
         .celebrate-text {
             text-transform: uppercase;
-            letter-spacing: 6px;
-            font-size: 19px;
+            letter-spacing: 4px;
+            font-size: clamp(14px, 2.5vw, 19px);
             margin: 0;
             opacity: 0.8;
             color: var(--burgundy);
@@ -110,7 +120,7 @@
         /* Names in Burgundy */
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 115px; 
+            font-size: clamp(60px, 10vw, 115px); 
             color: var(--burgundy);
             margin: 0;
             font-weight: 400;
@@ -120,8 +130,8 @@
 
         .and {
             font-style: italic;
-            font-size: 46px;
-            margin: 10px 0;
+            font-size: clamp(30px, 5vw, 46px);
+            margin: 5px 0;
             color: var(--burgundy);
             font-family: 'Cormorant Garamond', serif;
         }
@@ -129,16 +139,17 @@
         /* Photo Section */
         .photo-wrapper {
             margin: 20px 0;
-            width: 75%;
+            width: 85%;
             border: 1px solid var(--gold);
-            padding: 12px;
+            padding: 10px;
             background: #fff;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .couple-photo {
             width: 100%;
-            height: 450px;
+            height: auto;
+            max-height: 500px;
             display: block;
             object-fit: cover;
             filter: contrast(1.02) saturate(0.9);
@@ -149,13 +160,13 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .hero-location {
             font-weight: 400;
-            letter-spacing: 5px;
-            font-size: 26px;
+            letter-spacing: 3px;
+            font-size: clamp(18px, 3vw, 26px);
             line-height: 1.4;
             margin: 0;
             color: var(--burgundy);
@@ -165,12 +176,12 @@
         .hero-location strong {
             display: block;
             font-weight: 700;
-            font-size: 30px;
+            font-size: clamp(20px, 3.5vw, 30px);
             margin-bottom: 5px;
         }
 
         .hero-time {
-            font-size: 24px;
+            font-size: clamp(18px, 3vw, 24px);
             letter-spacing: 3px;
             color: var(--burgundy);
             font-weight: 600;
@@ -178,8 +189,8 @@
 
         /* Logistics Section */
         .logistics-section {
-            width: 1000px;
-            padding: 60px 80px; 
+            width: 100%;
+            padding: 40px 20px; 
             background-color: var(--cream);
             box-sizing: border-box;
             text-align: center;
@@ -189,12 +200,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 40px; 
+            gap: 30px; 
         }
 
         .footer-message {
-            font-size: 28px;
-            letter-spacing: 3px;
+            font-size: clamp(18px, 3vw, 28px);
+            letter-spacing: 2px;
             margin: 0;
             color: var(--forest-green);
             text-transform: uppercase;
@@ -204,11 +215,11 @@
         }
 
         .deadline {
-            font-size: 20px;
+            font-size: clamp(14px, 2.5vw, 20px);
             margin: 0;
             display: block;
             color: var(--burgundy);
-            letter-spacing: 5px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             font-weight: 700;
         }
@@ -216,12 +227,13 @@
         /* Language Switcher */
         .lang-switcher {
             width: 100%;
-            margin: 0;
-            padding-top: 50px;
+            margin-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid rgba(178, 147, 93, 0.3);
             display: flex;
             justify-content: center;
-            gap: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .lang-btn-small {
@@ -230,8 +242,8 @@
             color: var(--forest-green);
             cursor: pointer;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
-            letter-spacing: 3px;
+            font-size: clamp(18px, 2.5vw, 24px);
+            letter-spacing: 2px;
             opacity: 0.7;
             text-transform: uppercase;
             font-weight: 600;
@@ -242,49 +254,51 @@
 </head>
 <body>
 
-    <div class="hero-card">
-        <div class="engagement-banner">
-            <h2 id="banner-text">Engagement Party</h2>
-        </div>
-
-        <div class="header-text-group">
-            <p class="presence-text" id="header-text">The Honor of Your Presence is Requested</p>
-            <p class="celebrate-text" id="sub-header">To Celebrate the Engagement of</p>
-        </div>
-        
-        <div class="names-group">
-            <h1>Jessica Gutstein</h1>
-            <div class="and" id="and-text">and</div>
-            <h1>Nicolas Gachancipa</h1>
-        </div>
-
-        <div class="photo-wrapper">
-            <img src="engagement_4_bw.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
-        </div>
-
-        <div class="hero-location-time">
-            <div class="hero-location">
-                <strong id="location-name">13384 LAKESIDE TERRACE</strong>
-                COOPER CITY, FLORIDA
+    <div class="page-wrapper">
+        <div class="hero-card">
+            <div class="engagement-banner">
+                <h2 id="banner-text">Engagement Party</h2>
             </div>
-            <div class="hero-time" id="event-time">
-                at 7:00 PM
+
+            <div class="header-text-group">
+                <p class="presence-text" id="header-text">The Honor of Your Presence is Requested</p>
+                <p class="celebrate-text" id="sub-header">To Celebrate the Engagement of</p>
+            </div>
+            
+            <div class="names-group">
+                <h1>Jessica Gutstein</h1>
+                <div class="and" id="and-text">and</div>
+                <h1>Nicolas Gachancipa</h1>
+            </div>
+
+            <div class="photo-wrapper">
+                <img src="engagement_4_bw.jpeg" alt="Jessica and Nicolas" class="couple-photo" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200'">
+            </div>
+
+            <div class="hero-location-time">
+                <div class="hero-location">
+                    <strong id="location-name">13384 LAKESIDE TERRACE</strong>
+                    COOPER CITY, FLORIDA
+                </div>
+                <div class="hero-time" id="event-time">
+                    at 7:00 PM
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="logistics-section">
-        <p class="footer-message" id="footer-invite">
-            A Soirée of Splendor and High Rejoicing<br>
-            to commence the journey of a lifetime
-        </p>
-        
-        <span class="deadline" id="rsvp-deadline">R.S.V.P. BY MAY 1ST</span>
+        <div class="logistics-section">
+            <p class="footer-message" id="footer-invite">
+                A Soirée of Splendor and High Rejoicing<br>
+                to commence the journey of a lifetime
+            </p>
+            
+            <span class="deadline" id="rsvp-deadline">R.S.V.P. BY MAY 1ST</span>
 
-        <div class="lang-switcher">
-            <button class="lang-btn-small" onclick="updateLang('en')">English</button>
-            <button class="lang-btn-small" onclick="updateLang('es')">Español</button>
-            <button class="lang-btn-small" onclick="updateLang('it')">Italiano</button>
+            <div class="lang-switcher">
+                <button class="lang-btn-small" onclick="updateLang('en')">English</button>
+                <button class="lang-btn-small" onclick="updateLang('es')">Español</button>
+                <button class="lang-btn-small" onclick="updateLang('it')">Italiano</button>
+            </div>
         </div>
     </div>
 
@@ -319,34 +333,23 @@
             }
         };
 
-        function updateLang(lang, immediate = false) {
+        function updateLang(lang) {
             const data = translations[lang];
             if (!data) return;
 
-            const applyContent = () => {
-                const banner = document.getElementById('banner-text');
-                const header = document.getElementById('header-text');
-                const subHeader = document.getElementById('sub-header');
-                const and = document.getElementById('and-text');
-                const footer = document.getElementById('footer-invite');
-                const deadline = document.getElementById('rsvp-deadline');
-                const time = document.getElementById('event-time');
-
-                if (banner) banner.innerText = data.banner;
-                if (header) header.innerText = data.header;
-                if (subHeader) subHeader.innerText = data.subHeader;
-                if (and) and.innerText = data.and;
-                if (footer) footer.innerHTML = data.footer;
-                if (deadline) deadline.innerText = data.deadline;
-                if (time) time.innerText = data.time;
-            };
-            applyContent();
+            document.getElementById('banner-text').innerText = data.banner;
+            document.getElementById('header-text').innerText = data.header;
+            document.getElementById('sub-header').innerText = data.subHeader;
+            document.getElementById('and-text').innerText = data.and;
+            document.getElementById('footer-invite').innerHTML = data.footer;
+            document.getElementById('rsvp-deadline').innerText = data.deadline;
+            document.getElementById('event-time').innerText = data.time;
         }
 
         window.onload = () => {
             const params = new URLSearchParams(window.location.search);
             const lang = params.get('lang') || 'en';
-            updateLang(lang, true);
+            updateLang(lang);
         };
     </script>
 </body>

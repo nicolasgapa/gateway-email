@@ -27,7 +27,7 @@
         /* Centered Paper Wrapper for Laptop Zoom Out */
         .main-container {
             width: 100%;
-            max-width: 1100px; 
+            max-width: 1000px; 
             margin: 0 auto;
             background-color: var(--off-white);
             box-shadow: 0 0 80px rgba(0,0,0,0.2);
@@ -35,7 +35,7 @@
         }
 
         @media (min-width: 1024px) {
-            body { padding: 50px 0; }
+            body { padding: 60px 0; }
         }
 
         .newspaper-font { font-family: 'UnifrakturMaguntia', serif; }
@@ -125,7 +125,7 @@
         }
         @media (min-width: 768px) {
             .first-letter-cap::first-letter {
-                font-size: 6rem; 
+                font-size: 5.5rem; 
                 margin-right: 0.8rem;
                 line-height: 0.7;
                 padding-top: 0.6rem;
@@ -134,8 +134,8 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
         }
 
         .book-wrapper {
@@ -151,7 +151,7 @@
         }
 
         @media (min-width: 1024px) {
-            .book-content-area { min-height: 650px; }
+            .book-content-area { min-height: 600px; }
         }
 
         .book-slide {
@@ -171,25 +171,25 @@
             z-index: 1;
         }
 
-        .book-image-pane { width: 45%; }
+        .book-image-pane { width: 45%; height: auto; }
         .book-image-pane img { width: 100%; height: 100%; object-fit: cover; }
 
         .book-text-pane {
             width: 55%;
-            padding: 4rem;
+            padding: 3rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .book-text-pane p { font-size: 1.4rem; line-height: 1.7; }
+        .book-text-pane p { font-size: 1.25rem; line-height: 1.6; }
 
         @media (max-width: 768px) {
             .book-slide { flex-direction: column !important; }
-            .book-image-pane, .book-text-pane { width: 100% !important; }
-            .book-image-pane { height: 300px; display: block !important; } 
-            .book-text-pane { padding: 2.5rem 1.5rem; }
-            .book-text-pane p { font-size: 1.2rem; } 
+            .book-image-pane, .book-text-pane { width: 100%; }
+            .book-image-pane { height: 280px; } 
+            .book-text-pane { padding: 2rem 1rem; text-align: left; align-items: flex-start; }
+            .book-text-pane p { font-size: 1.15rem; } 
         }
     </style>
 </head>
@@ -242,14 +242,14 @@
         <header class="pt-2 pb-8 text-center">
             <div class="max-w-[90%] mx-auto px-4">
                 <div class="mx-auto mb-10 w-full text-center">
-                    <div class="newspaper-font text-[3.5rem] sm:text-[5rem] lg:text-[7.5rem] leading-none text-[#2d3436]">
+                    <div class="newspaper-font text-[3.5rem] sm:text-[5rem] lg:text-[6.5rem] leading-none text-[#2d3436]">
                         The Wedding Times
                     </div>
                     <div class="h-[4px] bg-[#2d3436] w-full mt-4 mb-[3px]"></div>
                     <div class="h-[1px] bg-[#2d3436] w-full"></div>
                 </div>
 
-                <h1 class="uppercase font-serif text-3xl sm:text-5xl lg:text-6xl tracking-[0.2em] text-gray-800 mb-4 font-normal">
+                <h1 class="uppercase font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-[0.2em] text-gray-800 mb-4 font-normal">
                     Jessica & Nicolas
                 </h1>
                 
@@ -275,11 +275,12 @@
             </div>
         </nav>
 
-        <main class="px-6 md:px-16 py-10">
+        <main class="px-6 md:px-12 py-10">
             
             <section id="home" class="tab-content active">
                 <div class="gold-border shadow-sm book-wrapper">
                     <div id="slider-container" class="book-content-area">
+                        
                         <div class="book-slide active flex flex-col lg:flex-row w-full">
                             <div class="book-image-pane border-b lg:border-b-0 lg:border-r border-[#c5a059]">
                                 <img id="story_1">
@@ -311,8 +312,8 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">III. <span lang-content="en">The Encounter</span><span lang-content="es">El Encuentro</span><span lang-content="it">L'Incontro</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Their meeting transpired amidst the vibrant spirit of Miami in September 2023. For years, they had existed as strangers, observing one another from opposite ends of rooms with a perceived lack of attention. Little did they know the universe was arranging the scene for its greatest love story.</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su encuentro ocurrió bajo el espíritu vibrante de Miami en septiembre de 2023. Durante años, habían existido como extraños, observándose mutuamente desde extremos opuestos de la habitación con una aparente falta de atención.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il loro incontro è avvenuto nel vivace spirito di Miami nel settembre 2023. Per anni erano esistiti come estranei, osservandosi da estremità opposte delle stanze con una percepita mancanza di attenzione.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su encuentro ocurrió bajo el espíritu vibrante de Miami en septiembre de 2023. Durante años, habían existido como extraños, observándose mutuamente desde extremos opuestos de la habitación con una aparente falta de atención. Poco sabían que el universo estaba preparando la escena para su historia de amor más grande.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il loro incontro è avvenuto nel vivace spirito di Miami nel settembre 2023. Per anni erano esistiti come estranei, osservandosi da estremità opposte delle stanze con una percepita mancanza di attenzione. Non sapevano che l'universo stava preparando la scena per la sua più grande storia d'amore.</p>
                             </div>
                         </div>
 
@@ -323,8 +324,8 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">IV. <span lang-content="en">Manhattan Adventures</span><span lang-content="es">Aventuras en Manhattan</span><span lang-content="it">Avventure a Manhattan</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">The second rendezvous occurred in the grand metropolis of New York. A weekend of laughter and spirited adventures was spent traversing their favorite city in the world. They jokingly whispered of a future in this beautiful metropolis, never guessing how soon it would arrive.</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">La segunda cita tuvo lugar en la gran metrópolis de Nueva York. Pasaron un fin de semana de risas y aventuras recorriendo su ciudad favorita del mundo.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il secondo appuntamento è avvenuto nella grande metropoli di New York. Un fine settimana di risate e avventure trascorso attraversando la loro città preferita al mondo.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">La segunda cita tuvo lugar en la gran metrópolis de Nueva York. Pasaron un fin de semana de risas y aventuras recorriendo su ciudad favorita del mundo. Susurraban en broma sobre un futuro en esta hermosa metrópoli, sin imaginar cuán pronto llegaría.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il secondo appuntamento è avvenuto nella grande metropoli di New York. Un fine settimana di risate e avventure trascorso attraversando la loro città preferita al mondo. Sussurravano scherzosamente di un futuro in questa bellissima metropoli, senza immaginare quanto presto sarebbe arrivato.</p>
                             </div>
                         </div>
 
@@ -335,8 +336,8 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">V. <span lang-content="en">The Hudson River</span><span lang-content="es">El Río Hudson</span><span lang-content="it">Il Fiume Hudson</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Destiny soon called them to Jersey City. Jessica, whose father was raised in Brooklyn, had spent her life mocking the Jersey shores from the eastern banks of the Hudson. As Jessica often explains to her father now: “It's on the other side of the Hudson River, Dad.”</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El destino pronto los llamó a Jersey City. Jessica, cuyo padre se crió en Brooklyn, había pasado su vida burlándose de las costas de Jersey.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il destino li chiamò presto a Jersey City. Jessica, il cui padre è cresciuto a Brooklyn, aveva passato la vita a deridere le coste del Jersey.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El destino pronto los llamó a Jersey City. Jessica, cuyo padre se crió en Brooklyn, había pasado su vida burlándose de las costas de Jersey desde las orillas orientales del Hudson. Como Jessica le explica a menudo a su padre ahora: "Está al otro lado del río Hudson, papá".</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il destino li chiamò presto a Jersey City. Jessica, il cui padre è cresciuto a Brooklyn, aveva passato la vita a deridere le coste del Jersey dalle sponde orientali dell'Hudson. Come Jessica spiega spesso a suo padre ora: "È dall'altra parte del fiume Hudson, papà".</p>
                             </div>
                         </div>
 
@@ -347,8 +348,8 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VI. <span lang-content="en">The Covenant</span><span lang-content="es">El Pacto</span><span lang-content="it">Il Patto</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">On the twenty-second of August, 2025, Nicolas requested Jessica’s hand in marriage. It was a moment of profound commitment, a promise of a future built upon the bedrock of their meaningful friendship and shared aspirations amidst the backdrop of history.</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El veintidós de agosto de 2025, Nicolás pidió la mano de Jessica en matrimonio.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il ventidue agosto 2025, Nicolas ha chiesto la mano di Jessica. È stato un momento di profondo impegno.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">El veintidós de agosto de 2025, Nicolás pidió la mano de Jessica en matrimonio. Fue un momento de profundo compromiso, una promesa de un futuro construido sobre la base de su amistad significativa y aspiraciones compartidas con la historia de fondo.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Il ventidue agosto 2025, Nicolas ha chiesto la mano di Jessica. È stato un momento di profondo impegno, la promessa di un futuro costruito sulle fondamenta della loro significativa amicizia e delle aspirazioni condivise sullo sfondo della storia.</p>
                             </div>
                         </div>
 
@@ -359,8 +360,8 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VII. <span lang-content="en">Jersey Life</span><span lang-content="es">Vida en Jersey</span><span lang-content="it">Vita a Jersey</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">They now dwell in the historic downtown of Jersey City, proud of their neighborhood. Their affection was so infectious that even Jessica’s father, a staunch Brooklynite, has converted his allegiances to the charms of the "Sixth Borough."</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Ahora residen en el centro histórico de Jersey City, orgullosos de su vecindario.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Ora vivono nel centro storico di Jersey City, orgogliosi del loro quartiere.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Ahora residen en el centro histórico de Jersey City, orgullosos de su vecindario. Su afecto fue tan contagioso que incluso el padre de Jessica, un firme brooklynita, ha convertido su lealtad a los encantos del "Sexto Distrito".</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">Ora vivono nel centro storico di Jersey City, orgogliosi del loro quartiere. Il loro affetto è stato così contagioso che persino il padre di Jessica, un convinto sostenitore di Brooklyn, ha convertito la sua fedeltà al fascino del "Sesto Distretto".</p>
                             </div>
                         </div>
 
@@ -371,14 +372,15 @@
                             <div class="book-text-pane">
                                 <h3 class="text-[#a67c37] mb-4 uppercase tracking-[0.2em] font-bold">VIII. <span lang-content="en">The Eternal Bond</span><span lang-content="es">El Vínculo Eterno</span><span lang-content="it">Il Legame Eterno</span></h3>
                                 <p lang-content="en" class="first-letter-cap font-light italic text-gray-700">Their love story is a noble pursuit of mutual growth and true friendship. It makes them individually the best versions of themselves as they prepare to dance within the grand halls of The Manor at Glen Cove. Sincerely, Jessica and Nicolas.</p>
-                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su historia de amor es una noble búsqueda del crecimiento mutuo y la verdadera amistad.</p>
-                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">La loro storia d'amore è una nobile ricerca di crescita reciproca e vera amicizia.</p>
+                                <p lang-content="es" class="first-letter-cap font-light italic text-gray-700">Su historia de amor es una noble búsqueda del crecimiento mutuo y la verdadera amistad. Los convierte individualmente en las mejores versiones de sí mismos mientras se preparan para bailar en los grandes salones de The Manor en Glen Cove. Atentamente, Jessica y Nicolás.</p>
+                                <p lang-content="it" class="first-letter-cap font-light italic text-gray-700">La loro storia d'amore è una nobile ricerca di crescita reciproca e vera amicizia. Li rende individualmente la versione migliore di se stessi mentre si preparano a ballare nelle grandi sale di The Manor a Glen Cove. Con affetto, Jessica e Nicolas.</p>
                             </div>
                         </div>
+
                     </div>
 
-                    <div class="flex justify-between items-center px-10 py-6 border-t border-gray-100">
-                        <div class="font-bold text-2xl text-gray-400 italic font-serif">
+                    <div class="flex justify-between items-center px-8 py-6 border-t border-gray-100">
+                        <div class="font-bold text-xl text-gray-400 italic font-serif">
                             <span id="chapNum" class="text-[#a67c37]">1</span> / 8
                         </div>
                         <div class="flex items-center gap-10">
@@ -396,7 +398,9 @@
             <section id="gallery" class="tab-content">
                 <div class="text-center mb-10">
                     <h2 class="text-4xl lg:text-7xl uppercase tracking-[0.2em] font-light text-gray-800">
-                        <span lang-content="en">The Visual Archive</span><span lang-content="es">El Archivo Visual</span><span lang-content="it">L'Archivo Visuale</span>
+                        <span lang-content="en">The Visual Archive</span>
+                        <span lang-content="es">El Archivo Visual</span>
+                        <span lang-content="it">L'Archivo Visuale</span>
                     </h2>
                 </div>
                 <div class="gallery-grid">
@@ -409,106 +413,194 @@
             </section>
 
             <section id="events" class="tab-content">
-                <div class="flex flex-col lg:flex-row-reverse gap-12 items-start text-center md:text-left">
-                    <div class="w-full lg:w-1/2 gold-border">
-                        <img id="event_wedding" class="w-full h-[400px] lg:h-[600px] object-cover">
+                <div class="flex flex-col lg:flex-row-reverse gap-10 md:gap-16 items-start text-center md:text-left w-full">
+                    
+                    <div class="w-full lg:w-1/2 gold-border relative">
+                        <img id="event_wedding" class="w-full h-[350px] md:h-[600px] object-cover md:object-top">
                     </div>
-                    <div class="w-full lg:w-1/2 space-y-12">
-                        <div class="bg-white p-10 border border-gray-100 shadow-sm">
-                            <h3 class="text-4xl text-[#a67c37] mb-2 font-medium">The Night Before</h3>
-                            <p class="uppercase font-bold text-gray-800">Friday, April 2, 2027</p>
-                            <p class="text-gray-600 mt-2 italic text-lg">8:00 PM – 10:00 PM</p>
-                            <div class="mt-6 text-gray-600">
+                    
+                    <div class="w-full lg:w-1/2 space-y-16">
+                        <div class="bg-white p-6 sm:p-10 border border-gray-100 shadow-sm">
+                            <h3 class="text-3xl sm:text-5xl text-[#a67c37] mb-2 font-medium">
+                                <span lang-content="en">The Night Before</span>
+                                <span lang-content="es">La Noche Anterior</span>
+                                <span lang-content="it">La Notte Prima</span>
+                            </h3>
+                            <p class="uppercase text-sm sm:text-lg tracking-[0.2em] mt-4 font-bold text-gray-800">
+                                <span lang-content="en">Friday, April 2, 2027</span>
+                                <span lang-content="es">Viernes, 2 de abril de 2027</span>
+                                <span lang-content="it">Venerdì 2 aprile 2027</span>
+                            </p>
+                            <p class="text-gray-700 mt-2 text-lg sm:text-xl italic">8:00 PM – 10:00 PM</p>
+                            
+                            <div class="mt-6 text-lg sm:text-xl text-gray-600 font-medium">
                                 <p>The Mansion at Glen Cove</p>
-                                <p class="text-sm">200 Dosoris Lane, Glen Cove, NY 11542</p>
+                                <p class="mt-2 text-base">200 Dosoris Lane, Glen Cove, NY 11542</p>
                             </div>
-                            <p class="mt-6 pt-4 border-t border-gray-100 text-sm font-bold uppercase tracking-widest">Attire: Formal</p>
+                            
+                            <p class="mt-8 text-sm sm:text-base font-bold text-gray-800 uppercase tracking-widest border-t border-gray-200 pt-4">
+                                <span lang-content="en">Attire: Formal</span>
+                                <span lang-content="es">Vestimenta: Formal</span>
+                                <span lang-content="it">Abbigliamento: Formale</span>
+                            </p>
                         </div>
-                        <div class="ornament opacity-30">❧</div>
-                        <div class="bg-white p-10 border border-gray-100 shadow-sm">
-                            <h3 class="text-4xl text-[#a67c37] mb-2 font-medium">The Wedding</h3>
-                            <p class="uppercase font-bold text-gray-800">Saturday, April 3, 2027</p>
-                            <div class="mt-8 space-y-4 text-gray-700 max-w-sm mx-auto md:mx-0">
+
+                        <div class="ornament opacity-40">❧</div>
+
+                        <div class="bg-white p-6 sm:p-10 border border-gray-100 shadow-sm">
+                            <h3 class="text-3xl sm:text-5xl text-[#a67c37] mb-2 font-medium">
+                                <span lang-content="en">The Wedding</span>
+                                <span lang-content="es">La Boda</span>
+                                <span lang-content="it">Il Matrimonio</span>
+                            </h3>
+                            <p class="uppercase text-sm sm:text-lg tracking-[0.2em] mt-4 font-bold text-gray-800">
+                                <span lang-content="en">Saturday, April 3, 2027</span>
+                                <span lang-content="es">Sábado, 3 de abril de 2027</span>
+                                <span lang-content="it">Sabato 3 aprile 2027</span>
+                            </p>
+                            
+                            <div class="mt-8 space-y-4 text-base sm:text-xl text-gray-700 max-w-xs sm:max-w-sm mx-auto md:mx-0">
                                 <div class="flex justify-between border-b border-gray-200 pb-2">
                                     <span class="font-bold">4:30 PM</span>
-                                    <span class="italic">Doors Open</span>
+                                    <span class="italic"><span lang-content="en">Doors Open</span><span lang-content="es">Llegada</span><span lang-content="it">Arrivo</span></span>
                                 </div>
                                 <div class="flex justify-between border-b border-gray-200 pb-2">
                                     <span class="font-bold">5:00 PM</span>
-                                    <span class="italic">Ceremony</span>
+                                    <span class="italic"><span lang-content="en">Ceremony</span><span lang-content="es">Ceremonia</span><span lang-content="it">Cerimonia</span></span>
                                 </div>
                                 <div class="flex justify-between border-b border-gray-200 pb-2">
                                     <span class="font-bold">6:00 PM</span>
-                                    <span class="italic">Cocktail Hour</span>
+                                    <span class="italic"><span lang-content="en">Cocktail Hour</span><span lang-content="es">Hora del Cóctel</span><span lang-content="it">Aperitivo</span></span>
                                 </div>
                                 <div class="flex justify-between border-b border-gray-200 pb-2">
                                     <span class="font-bold">7:00 PM</span>
-                                    <span class="italic">Reception</span>
+                                    <span class="italic"><span lang-content="en">Reception</span><span lang-content="es">Recepción</span><span lang-content="it">Ricevimento</span></span>
                                 </div>
                                 <div class="flex justify-between pb-2">
-                                    <span class="font-bold">11:00 PM</span>
-                                    <span class="italic">After Party</span>
+                                    <span class="font-bold">10:00 PM</span>
+                                    <span class="italic"><span lang-content="en">After Party</span><span lang-content="es">Fiesta</span><span lang-content="it">Dopo Festa</span></span>
                                 </div>
                             </div>
-                            <p class="mt-8 pt-4 border-t border-gray-100 text-sm font-bold uppercase tracking-widest">Attire: Black Tie</p>
+
+                            <div class="mt-8 text-lg sm:text-xl text-gray-600 font-medium">
+                                <p>The Mansion at Glen Cove</p>
+                                <p class="mt-2 text-base">200 Dosoris Lane, Glen Cove, NY 11542</p>
+                            </div>
+                            
+                            <p class="mt-8 text-sm sm:text-base font-bold text-gray-800 uppercase tracking-widest border-t border-gray-200 pt-4">
+                                <span lang-content="en">Attire: Black Tie</span>
+                                <span lang-content="es">Vestimenta: Etiqueta (Black Tie)</span>
+                                <span lang-content="it">Abbigliamento: Black Tie</span>
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section id="accommodation" class="tab-content text-center">
-                <div class="gold-border mb-10"><img id="mansion_entrance" class="w-full h-[300px] lg:h-[450px] object-cover"></div>
-                <div class="text-2xl italic text-gray-700 max-w-4xl mx-auto space-y-10">
+                
+                <div class="gold-border mb-10 w-full mx-auto">
+                    <img id="mansion_entrance" class="w-full h-[250px] md:h-[450px] object-cover" alt="The Mansion Entrance">
+                </div>
+
+                <div class="text-xl sm:text-2xl lg:text-3xl italic text-gray-700 font-medium w-full max-w-4xl mx-auto px-4">
                     <p>
                         <span lang-content="en">We are delighted to announce that the celebration shall be held entirely upon the Mansion grounds.</span>
                         <span lang-content="es">Nos complace anunciar que la celebración se llevará a cabo en su totalidad en los terrenos de la Mansión.</span>
                         <span lang-content="it">Siamo lieti di annunciare che i festeggiamenti si terranno interamente all'interno della tenuta della Villa.</span>
                     </p>
-                    <div class="gold-border p-8 md:p-12 bg-white shadow-sm not-italic">
-                        <p class="text-xl md:text-2xl font-bold text-[#a67c37] mb-6">
-                             <span lang-content="en">Please Note: The Mansion is currently updating its booking system. To secure your reservation within our exclusive room block, please contact the hotel directly:</span>
-                             <span lang-content="es">Atención: La Mansión está actualizando su sistema de reservas. Comuníquese directamente con el hotel:</span>
+                    
+                    <div class="gold-border p-6 md:p-12 mt-12 bg-white shadow-sm">
+                        <p class="text-lg sm:text-xl lg:text-2xl font-bold text-[#a67c37] mb-6 not-italic">
+                             <span lang-content="en">Please Note: The Mansion is currently updating its booking system. To secure your reservation within our exclusive room block for April 2nd through April 4th, 2027, please contact the hotel directly:</span>
+                             <span lang-content="es">Atención: La Mansión está actualizando su sistema de reservas. Para asegurar su habitación en nuestro bloque exclusivo del 2 al 4 de abril de 2027, comuníquese directamente con el hotel:</span>
+                             <span lang-content="it">Nota Bene: La Villa sta aggiornando il suo sistema di prenotazione. Per garantire la vostra camera nel nostro blocco esclusivo dal 2 al 4 aprile 2027, vi preghiamo di contattare direttamente l'hotel:</span>
                         </p>
-                        <p class="text-2xl md:text-3xl text-gray-800 mb-6 font-medium">
-                            <strong>Phone:</strong> (646) 518-8771<br>
-                            <span class="text-lg text-gray-500 italic">(Please ask for "Room Reservations")</span>
+                        
+                        <p class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-6 not-italic font-medium">
+                            <span lang-content="en"><strong>Phone:</strong> <br class="sm:hidden">(646) 518-8771</span>
+                            <span lang-content="es"><strong>Teléfono:</strong> <br class="sm:hidden">(646) 518-8771</span>
+                            <span lang-content="it"><strong>Telefono:</strong> <br class="sm:hidden">(646) 518-8771</span>
+                            <br>
+                            <span class="text-base sm:text-lg lg:text-xl text-gray-500 italic mt-2 inline-block">
+                                <span lang-content="en">(Please ask for "Room Reservations")</span>
+                                <span lang-content="es">(Por favor, pregunte por "Reservas de Habitaciones")</span>
+                                <span lang-content="it">(Si prega di chiedere di "Prenotazioni Camere")</span>
+                            </span>
                         </p>
-                        <p class="text-2xl md:text-3xl text-gray-800 mb-8 font-medium break-all">
-                            <strong>Email:</strong> <a href="mailto:gcmreservations@glencovemansion.com" class="text-[#a67c37] hover:underline">gcmreservations@glencovemansion.com</a>
+                        
+                        <p class="text-xl sm:text-2xl lg:text-3xl text-gray-800 mb-8 not-italic font-medium break-all">
+                            <strong>Email:</strong> <br class="sm:hidden"><a href="mailto:gcmreservations@glencovemansion.com" class="text-[#a67c37] hover:underline">gcmreservations@<br class="md:hidden">glencovemansion.com</a>
                         </p>
-                        <p class="text-lg md:text-xl text-gray-600 italic border-t border-gray-200 pt-6">
-                            Mention the Gachancipa/Gutstein Wedding when booking. We will update this page with a direct link soon!
+                        
+                        <div class="border-t border-gray-200 pt-6"></div>
+                        
+                        <p class="text-base sm:text-xl lg:text-2xl text-gray-600 italic">
+                            <span lang-content="en">Mention the Gachancipa/Gutstein Wedding when booking. We will update this page with a direct booking link as soon as their new system is live!</span>
+                            <span lang-content="es">Mencione la Boda Gachancipa/Gutstein al reservar. ¡Actualizaremos esta página con un enlace de reserva directa tan pronto como su nuevo sistema esté activo!</span>
+                            <span lang-content="it">Menzionare il Matrimonio Gachancipa/Gutstein al momento della prenotazione. Aggiorneremo questa pagina con un link di prenotazione diretta non appena il loro nuovo sistema sarà attivo!</span>
                         </p>
                     </div>
-                    <div class="mt-12">
-                        <a href="https://www.themansionatglencove.com/" target="_blank" class="inline-block p-10 border-2 border-[#c5a059] bg-white hover:bg-[#c5a059] hover:text-white transition-all uppercase font-bold tracking-widest">
-                            Visit The Mansion Website
-                        </a>
-                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-12">
+                    <a href="https://www.themansionatglencove.com/" target="_blank" class="block p-6 md:p-10 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group max-w-xl w-full bg-white shadow-sm hover:shadow-md">
+                        <h4 class="text-xl sm:text-3xl lg:text-4xl group-hover:text-white uppercase tracking-[0.2em] mb-2 font-bold">
+                            <span lang-content="en">Visit The Mansion</span>
+                            <span lang-content="es">Visitar La Mansión</span>
+                            <span lang-content="it">Visita La Villa</span>
+                        </h4>
+                        <p class="text-sm sm:text-lg italic font-bold">
+                            <span lang-content="en">Explore the wedding venue</span>
+                            <span lang-content="es">Explorar el lugar de la boda</span>
+                            <span lang-content="it">Esplora la location del matrimonio</span>
+                        </p>
+                    </a>
                 </div>
             </section>
 
             <section id="registry" class="tab-content">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                    <a href="https://www.williams-sonoma.com/registry/lk8kwq5chw/registry-list.html" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">WILLIAMS SONOMA</a>
-                    <a href="https://www.amazon.com/wedding/guest-view/3UNPIMCPLNJJF" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">AMAZON</a>
-                    <a href="https://www.anthropologie.com/registry/listing?registryId=C3B0CB972C8D" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">ANTHROPOLOGIE</a>
-                    <a href="https://www.crateandbarrel.com/gift-registry/jessica-gutstein-and-nicolas-gachancipa-parga/r7402739" target="_blank" class="p-8 border-2 border-[#c5a059] bg-white text-center hover:bg-[#c5a059] hover:text-white transition-all font-bold">CRATE & BARREL</a>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 px-2 max-w-5xl mx-auto">
+                    <a href="https://www.williams-sonoma.com/registry/lk8kwq5chw/registry-list.html" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
+                        <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Williams<br>Sonoma</h4>
+                    </a>
+
+                    <a href="https://www.amazon.com/wedding/guest-view/3UNPIMCPLNJJF" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
+                        <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Amazon</h4>
+                    </a>
+
+                    <a href="https://www.anthropologie.com/registry/listing?registryId=C3B0CB972C8D" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
+                        <h4 class="text-xs sm:text-[0.9rem] md:text-base text-center uppercase tracking-tight font-bold w-full whitespace-nowrap">Anthropologie</h4>
+                    </a>
+
+                    <a href="https://www.crateandbarrel.com/gift-registry/jessica-gutstein-and-nicolas-gachancipa-parga/r7402739" target="_blank" class="block p-4 sm:p-8 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group aspect-square flex flex-col justify-center items-center bg-white shadow-sm">
+                        <h4 class="text-sm sm:text-lg md:text-xl text-center uppercase tracking-[0.1em] font-bold w-full">Crate &<br>Barrel</h4>
+                    </a>
                 </div>
             </section>
 
-            <section id="rsvp" class="tab-content text-center">
-                <a href="https://www.theknot.com/us/jessica-gutstein-and-nicolas-gachancipa-apr-2027/rsvp" target="_blank" class="inline-block p-16 border-2 border-[#c5a059] bg-white hover:bg-[#c5a059] hover:text-white transition-all shadow-md">
-                    <h4 class="text-4xl uppercase tracking-widest font-bold">RSVP Online</h4>
-                    <p class="mt-4 italic">Click here to submit your response</p>
-                </a>
+            <section id="rsvp" class="tab-content text-center w-full">
+                <div class="flex justify-center mt-8">
+                    <a href="https://www.theknot.com/us/jessica-gutstein-and-nicolas-gachancipa-apr-2027/rsvp" target="_blank" class="block p-8 md:p-16 border-2 border-[#c5a059] hover:bg-[#c5a059] hover:text-white transition-all group max-w-2xl w-full bg-white shadow-md">
+                        <h4 class="text-2xl sm:text-4xl md:text-5xl group-hover:text-white uppercase tracking-[0.2em] mb-4 font-bold">
+                            <span lang-content="en">RSVP Online</span>
+                            <span lang-content="es">Confirmar Aquí</span>
+                            <span lang-content="it">Rispondi Online</span>
+                        </h4>
+                        <p class="text-base sm:text-xl italic font-bold">
+                            <span lang-content="en">Click here to submit your response</span>
+                            <span lang-content="es">Haga clic aquí para enviar su respuesta</span>
+                            <span lang-content="it">Clicca qui per inviare la tua risposta</span>
+                        </p>
+                    </a>
+                </div>
             </section>
 
         </main>
 
-        <footer class="mt-12 py-12 border-t border-[#c5a059] text-center">
-            <p class="font-serif uppercase text-4xl text-gray-800 tracking-[0.2em]">Jessica & Nicolas</p>
-            <p class="text-xs uppercase tracking-[0.4em] text-[#a67c37] mt-4 font-bold">Long Island &bull; MMXXVII</p>
+        <footer class="mt-12 md:mt-20 py-12 bg-white border-t border-[#c5a059] text-center w-full">
+            <p class="font-serif uppercase text-2xl sm:text-4xl md:text-5xl text-gray-800 tracking-[0.2em]">Jessica & Nicolas</p>
+            <p class="text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] md:tracking-[0.4em] text-[#a67c37] mt-4 font-bold">Long Island &bull; MMXXVII</p>
         </footer>
     </div>
 
@@ -521,9 +613,17 @@
             const countdownEl = document.getElementById('countdown');
             if (countdownEl) {
                 if (days > 0) {
-                    countdownEl.innerHTML = `<span lang-content="en">${days} DAYS TO GO!</span><span lang-content="es">¡FALTAN ${days} DÍAS!</span><span lang-content="it">${days} GIORNI AL SÌ!</span>`;
+                    countdownEl.innerHTML = `
+                        <span lang-content="en">${days} DAYS TO GO!</span>
+                        <span lang-content="es">¡FALTAN ${days} DÍAS!</span>
+                        <span lang-content="it">${days} GIORNI AL SÌ!</span>
+                    `;
                 } else {
-                    countdownEl.innerHTML = `THE DAY IS HERE!`;
+                    countdownEl.innerHTML = `
+                        <span lang-content="en">THE DAY IS HERE!</span>
+                        <span lang-content="es">¡EL DÍA HA LLEGADO!</span>
+                        <span lang-content="it">IL GIORNO È ARRIVATO!</span>
+                    `;
                 }
             }
         }
@@ -531,25 +631,33 @@
         function setLanguage(lang) {
             document.body.className = 'min-h-screen lang-' + lang + ' text-center md:text-left';
             document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('toggle-' + lang).classList.add('active');
+            const btn = document.getElementById('toggle-' + lang);
+            if(btn) btn.classList.add('active');
         }
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById('btn-' + tabId).classList.add('active');
+            const content = document.getElementById(tabId);
+            const btn = document.getElementById('btn-' + tabId);
+            if(content) content.classList.add('active');
+            if(btn) btn.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         let currentSlide = 0;
         function changeSlide(direction) {
             const slides = document.querySelectorAll('.book-slide');
+            if (slides.length === 0) return;
+            
             slides[currentSlide].style.display = 'none';
             slides[currentSlide].classList.remove('active');
+            
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            
             slides[currentSlide].style.display = 'flex';
             slides[currentSlide].classList.add('active');
+            
             document.getElementById('chapNum').textContent = currentSlide + 1;
             document.getElementById('prevBtn').disabled = (currentSlide === 0);
             document.getElementById('nextBtn').disabled = (currentSlide === slides.length - 1);
@@ -560,21 +668,38 @@
             const folderPath = list.folder;
             const setImg = (id, filename) => {
                 const el = document.getElementById(id);
-                if (el && filename) el.src = folderPath + filename;
+                if (el && filename) {
+                    el.src = folderPath + filename;
+                    el.onerror = function() {
+                        this.src = "https://via.placeholder.com/1200x800/fdfaf6/c5a059?text=J+%26+N";
+                    };
+                }
             };
             for (let i = 1; i <= 8; i++) setImg('story_' + i, list['story_' + i]);
             for (let i = 1; i <= 20; i++) setImg('gallery_' + i, list['gallery_' + i]);
             setImg('event_wedding', list.event_wedding);
             setImg('mansion_entrance', list.mansion_entrance);
-            document.querySelectorAll('.book-slide').forEach((s, i) => { if(i !== 0) s.style.display = 'none'; });
+            
+            const slides = document.querySelectorAll('.book-slide');
+            slides.forEach((slide, index) => {
+                if (index !== 0) slide.style.display = 'none';
+            });
         }
 
         window.onload = () => {
             applyImages();
             calculateCountdown();
+            
             const urlParams = new URLSearchParams(window.location.search);
-            const lang = urlParams.get('lang') || 'en';
-            setLanguage(lang);
+            const lang = urlParams.get('lang');
+            if (['en', 'es', 'it'].includes(lang)) {
+                setLanguage(lang);
+            } else {
+                setLanguage('en');
+            }
+
+            const prevBtn = document.getElementById('prevBtn');
+            if(prevBtn) prevBtn.disabled = true;
         };
     </script>
 </body>
